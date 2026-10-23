@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About · Basin Powered Dispatch</title>
+<meta name="description" content="Oilfield dispatch still runs on phone calls and whiteboards. We built Basin Powered Dispatch to fix that.">
+<meta name="theme-color" content="#0B1F38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
+      <!-- LOGO: replace the two spans below with <img src="logo.svg" alt="Basin Powered Dispatch"> -->
+      <span class="logo-mark">B</span><span>Basin Powered Dispatch</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html" class=active>About</a></li><li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://rigready1.netlify.app/">Sign in</a></li>
+      <li><a class="btn btn-primary" href="demo.html">Try the demo</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="hero small">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h1>Dispatch still runs on phone calls.</h1>
+    <p class="lead" style="margin-top:18px">Whiteboards, group texts, and a dispatcher calling down the list. We built something better.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">The problem</div>
+      <h2>A missed call is a missed load.</h2>
+      <p class="lead">Every hauler we talked to said the same thing: the hardest part isn't the driving. It's finding the truck.</p>
+      <ul class="checks">
+        <li>Orders come in at all hours</li>
+        <li>Dispatchers call driver after driver</li>
+        <li>Operators call back for status</li>
+        <li>Nobody has the full picture</li>
+      </ul>
+    </div>
+    <div class="photo">Field photo<br><small>(add a licensed or company photo here)</small></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split rev">
+    <div class="photo">Team / truck photo<br><small>(placeholder)</small></div>
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2>Built with haulers in the Permian.</h2>
+      <p class="lead">We built Basin Powered Dispatch alongside working vac and water-hauling crews out of Midland, TX. Simple enough for any driver. Fast enough for 4 AM.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>See it in two minutes.</h2>
+    <p class="lead">Click through a sample hauling company as the dispatcher, the driver, or the operator.</p>
+    <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch &middot; Built in the Permian</div>
+    <nav>
+      <a href="demo.html">Try the demo</a>
+      <a href="https://rigready1.netlify.app/">Sign in</a>
+      <a href="https://rigready1.netlify.app/privacy/">Privacy</a>
+      <a href="https://rigready1.netlify.app/terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>

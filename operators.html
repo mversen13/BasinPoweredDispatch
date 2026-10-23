@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Operators · Basin Powered Dispatch</title>
+<meta name="description" content="See which oilfield haulers have trucks available, pick one, or send the job to all of them.">
+<meta name="theme-color" content="#0B1F38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
+      <!-- LOGO: replace the two spans below with <img src="logo.svg" alt="Basin Powered Dispatch"> -->
+      <span class="logo-mark">B</span><span>Basin Powered Dispatch</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html" class=active>Operators</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://rigready1.netlify.app/">Sign in</a></li>
+      <li><a class="btn btn-primary" href="demo.html">Try the demo</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="hero small">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">For operators</div>
+      <h1>Know who can haul before you pick up the phone.</h1>
+      <p class="lead" style="margin-top:18px">See which carriers have trucks open right now, and get one moving in a few taps.</p>
+      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+    </div>
+    <div>
+<div class="board" aria-hidden="true">
+  <div class="board-top"><b>Today &middot; Dispatch board</b><span class="pill green">9 drivers on</span></div>
+  <div class="cols">
+    <div class="col"><h4>Needs driver</h4>
+      <div class="job"><b>Red Mesa 14H</b><span>Fresh water &middot; 2 trucks</span><span class="pill amber">Offering&hellip;</span></div>
+      <div class="job"><b>Coyote Draw 3</b><span>Vac &middot; 1 truck</span><span class="pill amber">Offering&hellip;</span></div>
+    </div>
+    <div class="col"><h4>On the way</h4>
+      <div class="job"><b>Big Spring SWD</b><span>Luis &middot; ETA 22 min</span><span class="pill blue">En route</span></div>
+      <div class="job"><b>Mustang Pad</b><span>Ray &middot; ETA 9 min</span><span class="pill blue">En route</span></div>
+    </div>
+    <div class="col"><h4>Done</h4>
+      <div class="job"><b>Caprock 7</b><span>Ana &middot; 3 loads</span><span class="pill green">Complete</span></div>
+      <div class="job"><b>Sand Hills 2</b><span>Mike &middot; 2 loads</span><span class="pill green">Complete</span></div>
+    </div>
+  </div>
+  <div class="drivers">
+    <div class="drv"><span class="dot"></span>Luis</div><div class="drv"><span class="dot"></span>Ana</div>
+    <div class="drv"><span class="dot busy"></span>Ray</div><div class="drv"><span class="dot"></span>Mike</div>
+    <div class="drv"><span class="dot off"></span>Jesse</div>
+  </div>
+</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cards four">
+      <div class="card"><div class="icon">&#9673;</div><h3>See who's open</h3><p>Live availability across your haulers.</p></div>
+      <div class="card"><div class="icon">&#10148;</div><h3>Pick a company</h3><p>Or a specific driver you trust.</p></div>
+      <div class="card"><div class="icon">&#128227;</div><h3>Or send to all</h3><p>First carrier to accept gets the job.</p></div>
+      <div class="card"><div class="icon">&#128205;</div><h3>Watch it arrive</h3><p>Truck status and ETA, no calls.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split rev">
+    <div>
+<div class="phone" aria-hidden="true"><div class="screen">
+  <div class="hdr">New job for you</div>
+  <div class="offer">
+    <div class="tag">Offer &middot; 6:00 AM</div>
+    <h5>Red Mesa 14H</h5>
+    <dl><dt>Load</dt><dd>Fresh water</dd><dt>Trucks</dt><dd>2</dd><dt>County</dt><dd>Midland</dd></dl>
+    <div class="yn"><div class="yes">Yes</div><div class="no">No</div></div>
+  </div>
+  <div class="mini"><span>Pin sent to your maps</span><b>&#10003;</b></div>
+</div></div></div>
+    <div>
+      <div class="eyebrow">Free to start</div>
+      <h2>Your first 10 job orders are free.</h2>
+      <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
+      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
+      <div class="btns"><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>See it in two minutes.</h2>
+    <p class="lead">Click through a sample hauling company as the dispatcher, the driver, or the operator.</p>
+    <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch &middot; Built in the Permian</div>
+    <nav>
+      <a href="demo.html">Try the demo</a>
+      <a href="https://rigready1.netlify.app/">Sign in</a>
+      <a href="https://rigready1.netlify.app/privacy/">Privacy</a>
+      <a href="https://rigready1.netlify.app/terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Try the Demo · Basin Powered Dispatch</title>
+<meta name="description" content="Click through Basin Powered Dispatch as a dispatcher, driver, or operator.">
+<meta name="theme-color" content="#0B1F38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
+      <!-- LOGO: replace the two spans below with <img src="logo.svg" alt="Basin Powered Dispatch"> -->
+      <span class="logo-mark">B</span><span>Basin Powered Dispatch</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://rigready1.netlify.app/">Sign in</a></li>
+      <li><a class="btn btn-primary" href="demo.html">Try the demo</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Try the demo</div>
+      <h1>Click through it yourself.</h1>
+      <p class="lead" style="margin-top:18px">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver, or the operator.</p>
+      <ul class="checks" style="color:#fff">
+        <li>Nothing is real. No texts or emails go out.</li>
+        <li>Switch roles any time.</li>
+        <li>Takes about two minutes.</li>
+      </ul>
+    </div>
+    <form class="form-card" name="demo-request" method="POST" action="demo-ready.html" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="demo-request">
+      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <h3>Open the demo</h3>
+      <p class="sub">Tell us who you are and we'll take you right in.</p>
+      <div class="row2">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="company">Company</label><input id="company" name="company" required autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="type">I'm a&hellip;</label>
+          <select id="type" name="type" required><option value="">Choose one</option><option>Carrier / trucking company</option><option>Operator</option><option>Other</option></select></div>
+        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric"></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Open the demo &rarr;</button>
+      <p class="fine">We'll only use this to follow up about Basin Powered Dispatch.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch &middot; Built in the Permian</div>
+    <nav>
+      <a href="demo.html">Try the demo</a>
+      <a href="https://rigready1.netlify.app/">Sign in</a>
+      <a href="https://rigready1.netlify.app/privacy/">Privacy</a>
+      <a href="https://rigready1.netlify.app/terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>

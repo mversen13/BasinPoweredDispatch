@@ -1,0 +1,372 @@
+"""Assembles the static pages with a shared header/footer. Output = plain .html files (no build step needed on Netlify)."""
+from pathlib import Path
+
+APP = "https://rigready1.netlify.app"
+NAV = [("index.html", "Home"), ("carriers.html", "Carriers"), ("operators.html", "Operators"),
+       ("about.html", "About"), ("faq.html", "FAQ")]
+
+
+def head(title, desc):
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<meta name="theme-color" content="#0B1F38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>"""
+
+
+def header(active):
+    links = "".join(
+        f'<li><a href="{h}"{" class=active" if h == active else ""}>{t}</a></li>' for h, t in NAV)
+    return f"""
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
+      <!-- LOGO: replace the two spans below with <img src="logo.svg" alt="Basin Powered Dispatch"> -->
+      <span class="logo-mark">B</span><span>Basin Powered Dispatch</span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      {links}
+      <li><a href="{APP}/">Sign in</a></li>
+      <li><a class="btn btn-primary" href="demo.html">Try the demo</a></li>
+    </ul>
+  </div>
+</header>
+<main>"""
+
+
+FOOTER = f"""
+</main>
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch &middot; Built in the Permian</div>
+    <nav>
+      <a href="demo.html">Try the demo</a>
+      <a href="{APP}/">Sign in</a>
+      <a href="{APP}/privacy/">Privacy</a>
+      <a href="{APP}/terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
+"""
+
+CTA = """
+<section class="cta">
+  <div class="wrap">
+    <h2>See it in two minutes.</h2>
+    <p class="lead">Click through a sample hauling company as the dispatcher, the driver, or the operator.</p>
+    <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+  </div>
+</section>"""
+
+BOARD = """
+<div class="board" aria-hidden="true">
+  <div class="board-top"><b>Today &middot; Dispatch board</b><span class="pill green">9 drivers on</span></div>
+  <div class="cols">
+    <div class="col"><h4>Needs driver</h4>
+      <div class="job"><b>Red Mesa 14H</b><span>Fresh water &middot; 2 trucks</span><span class="pill amber">Offering&hellip;</span></div>
+      <div class="job"><b>Coyote Draw 3</b><span>Vac &middot; 1 truck</span><span class="pill amber">Offering&hellip;</span></div>
+    </div>
+    <div class="col"><h4>On the way</h4>
+      <div class="job"><b>Big Spring SWD</b><span>Luis &middot; ETA 22 min</span><span class="pill blue">En route</span></div>
+      <div class="job"><b>Mustang Pad</b><span>Ray &middot; ETA 9 min</span><span class="pill blue">En route</span></div>
+    </div>
+    <div class="col"><h4>Done</h4>
+      <div class="job"><b>Caprock 7</b><span>Ana &middot; 3 loads</span><span class="pill green">Complete</span></div>
+      <div class="job"><b>Sand Hills 2</b><span>Mike &middot; 2 loads</span><span class="pill green">Complete</span></div>
+    </div>
+  </div>
+  <div class="drivers">
+    <div class="drv"><span class="dot"></span>Luis</div><div class="drv"><span class="dot"></span>Ana</div>
+    <div class="drv"><span class="dot busy"></span>Ray</div><div class="drv"><span class="dot"></span>Mike</div>
+    <div class="drv"><span class="dot off"></span>Jesse</div>
+  </div>
+</div>"""
+
+PHONE = """
+<div class="phone" aria-hidden="true"><div class="screen">
+  <div class="hdr">New job for you</div>
+  <div class="offer">
+    <div class="tag">Offer &middot; 6:00 AM</div>
+    <h5>Red Mesa 14H</h5>
+    <dl><dt>Load</dt><dd>Fresh water</dd><dt>Trucks</dt><dd>2</dd><dt>County</dt><dd>Midland</dd></dl>
+    <div class="yn"><div class="yes">Yes</div><div class="no">No</div></div>
+  </div>
+  <div class="mini"><span>Pin sent to your maps</span><b>&#10003;</b></div>
+</div></div>"""
+
+PAGES = {}
+
+PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loads.",
+"Dispatch for oilfield vac and water haulers. Orders in, drivers offered, operators updated — without calling down the list.", f"""
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Dispatch for oilfield haulers</div>
+      <h1>No missed calls.<br>No missed loads.</h1>
+      <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer on his phone. The operator sees the truck coming. Nobody's calling down a list.</p>
+      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a><a class="btn btn-ghost" href="#how">How it works</a></div>
+    </div>
+    <div class="mock-stack">{BOARD}{PHONE}</div>
+  </div>
+</section>
+
+<div class="pain"><div class="wrap row">
+  <div><h3>Phone rings at 4 AM.</h3><p>Miss it and the load goes to someone else.</p></div>
+  <div><h3>Calling driver after driver.</h3><p>Who's on? Who's close? Who's up next?</p></div>
+  <div><h3>&ldquo;Where's my truck?&rdquo;</h3><p>Operators calling back all day for updates.</p></div>
+</div></div>
+
+<section id="how">
+  <div class="wrap center">
+    <div class="eyebrow">How it works</div>
+    <h2>Four steps. No whiteboard.</h2>
+    <div class="cards four" style="text-align:left">
+      <div class="card"><div class="step-num">1</div><h3>Order comes in</h3><p>Call, text, email or form. Every order lands in one place.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>Driver gets the offer</h3><p>Sent to who's on and up next. No answer? It moves on.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>Driver taps Yes</h3><p>Then On my way, On site, Done. One tap each.</p></div>
+      <div class="card"><div class="step-num">4</div><h3>Operator sees it</h3><p>Live status on every truck. No callbacks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="cards two" style="margin-top:0">
+      <div class="aud"><div class="eyebrow">For carriers</div><h2>Fill every load.</h2><p>Know who's on, offer jobs in order, and track every truck from one screen.</p><a class="more" href="carriers.html">For carriers &rarr;</a></div>
+      <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast.</h2><p>See which haulers have trucks open, pick one, or send the job to all of them.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="free">
+      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay when you grow.</h2><p>No contracts to get going. Plans scale with your fleet. Ask us on a demo.</p></div>
+      <div class="tiers">
+        <div class="tier"><b>Carriers</b>Free for 30 dispatch jobs a month</div>
+        <div class="tier"><b>Operators</b>Free for your first 10 job orders</div>
+      </div>
+    </div>
+  </div>
+</section>
+{CTA}""")
+
+PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
+"Dispatch for vac and water-hauling fleets. Offer jobs in order, track every truck, stop working the phone.", f"""
+<section class="hero small">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">For carriers</div>
+      <h1>Fill every load without working the phone.</h1>
+      <p class="lead" style="margin-top:18px">Built for vac and water haulers running 10 to 75 trucks.</p>
+      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+    </div>
+    <div>{PHONE}</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cards">
+      <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver: on, off, or on a job.</p></div>
+      <div class="card"><div class="icon">&#8635;</div><h3>Offers go out in order</h3><p>Up next gets it first. No answer, it rolls to the next driver.</p></div>
+      <div class="card"><div class="icon">&#128241;</div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Yes and goes.</p></div>
+      <div class="card"><div class="icon">&#9201;</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
+      <div class="card"><div class="icon">&#9742;</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
+      <div class="card"><div class="icon">&#10003;</div><h3>Operators stay updated</h3><p>They see status themselves. Fewer callbacks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split">
+    <div>{BOARD}</div>
+    <div>
+      <div class="eyebrow">Free to start</div>
+      <h2>30 dispatch jobs a month, free.</h2>
+      <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
+      <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
+      <div class="btns"><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+    </div>
+  </div>
+</section>
+{CTA}""")
+
+PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
+"See which oilfield haulers have trucks available, pick one, or send the job to all of them.", f"""
+<section class="hero small">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">For operators</div>
+      <h1>Know who can haul before you pick up the phone.</h1>
+      <p class="lead" style="margin-top:18px">See which carriers have trucks open right now, and get one moving in a few taps.</p>
+      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+    </div>
+    <div>{BOARD}</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cards four">
+      <div class="card"><div class="icon">&#9673;</div><h3>See who's open</h3><p>Live availability across your haulers.</p></div>
+      <div class="card"><div class="icon">&#10148;</div><h3>Pick a company</h3><p>Or a specific driver you trust.</p></div>
+      <div class="card"><div class="icon">&#128227;</div><h3>Or send to all</h3><p>First carrier to accept gets the job.</p></div>
+      <div class="card"><div class="icon">&#128205;</div><h3>Watch it arrive</h3><p>Truck status and ETA, no calls.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split rev">
+    <div>{PHONE}</div>
+    <div>
+      <div class="eyebrow">Free to start</div>
+      <h2>Your first 10 job orders are free.</h2>
+      <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
+      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
+      <div class="btns"><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+    </div>
+  </div>
+</section>
+{CTA}""")
+
+PAGES["about.html"] = ("About · Basin Powered Dispatch",
+"Oilfield dispatch still runs on phone calls and whiteboards. We built Basin Powered Dispatch to fix that.", f"""
+<section class="hero small">
+  <div class="wrap">
+    <div class="eyebrow">About</div>
+    <h1>Dispatch still runs on phone calls.</h1>
+    <p class="lead" style="margin-top:18px">Whiteboards, group texts, and a dispatcher calling down the list. We built something better.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">The problem</div>
+      <h2>A missed call is a missed load.</h2>
+      <p class="lead">Every hauler we talked to said the same thing: the hardest part isn't the driving. It's finding the truck.</p>
+      <ul class="checks">
+        <li>Orders come in at all hours</li>
+        <li>Dispatchers call driver after driver</li>
+        <li>Operators call back for status</li>
+        <li>Nobody has the full picture</li>
+      </ul>
+    </div>
+    <div class="photo">Field photo<br><small>(add a licensed or company photo here)</small></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split rev">
+    <div class="photo">Team / truck photo<br><small>(placeholder)</small></div>
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2>Built with haulers in the Permian.</h2>
+      <p class="lead">We built Basin Powered Dispatch alongside working vac and water-hauling crews out of Midland, TX. Simple enough for any driver. Fast enough for 4 AM.</p>
+    </div>
+  </div>
+</section>
+{CTA}""")
+
+FAQS = [
+    ("What is Basin Powered Dispatch?", "A dispatch board for oilfield haulers. Orders come in, drivers get offers on their phone, and operators see truck status live."),
+    ("Who is it for?", "Trucking companies running about 10 to 75 trucks (vac, water and fluid haulers) and the operators who hire them."),
+    ("What does it cost?", "Free to start. Carriers get 30 dispatch jobs a month free. Operators get their first 10 job orders free. Paid plans scale with fleet size. Ask us on a demo."),
+    ("Does it handle billing or payments?", "No. We stick to dispatch. No money runs through the platform, and your billing stays how it is today."),
+    ("Can operators and carriers both use it?", "Yes. Carriers dispatch their own drivers. Operators can see who's available, pick a carrier, or send a job to all of them."),
+    ("Where do you work?", "We're starting in the Permian Basin and expanding from there."),
+    ("Can I try it first?", "Yes. The demo is a sample hauling company you can click through as the dispatcher, a driver, or an operator. Nothing is real and nothing gets sent."),
+]
+
+PAGES["faq.html"] = ("FAQ · Basin Powered Dispatch",
+"Common questions about Basin Powered Dispatch.", f"""
+<section class="hero small">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h1>Quick answers.</h1>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="faq">
+      {"".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQS)}
+    </div>
+    <div class="bot-slot">
+      <h3>Still have a question?</h3>
+      <p>Ask our assistant below.</p>
+      <!-- SUPPORT BOT: paste the bot's embed snippet here -->
+    </div>
+  </div>
+</section>
+{CTA}""")
+
+PAGES["demo.html"] = ("Try the Demo · Basin Powered Dispatch",
+"Click through Basin Powered Dispatch as a dispatcher, driver, or operator.", """
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Try the demo</div>
+      <h1>Click through it yourself.</h1>
+      <p class="lead" style="margin-top:18px">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver, or the operator.</p>
+      <ul class="checks" style="color:#fff">
+        <li>Nothing is real. No texts or emails go out.</li>
+        <li>Switch roles any time.</li>
+        <li>Takes about two minutes.</li>
+      </ul>
+    </div>
+    <form class="form-card" name="demo-request" method="POST" action="demo-ready.html" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="demo-request">
+      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <h3>Open the demo</h3>
+      <p class="sub">Tell us who you are and we'll take you right in.</p>
+      <div class="row2">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="company">Company</label><input id="company" name="company" required autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="type">I'm a&hellip;</label>
+          <select id="type" name="type" required><option value="">Choose one</option><option>Carrier / trucking company</option><option>Operator</option><option>Other</option></select></div>
+        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric"></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Open the demo &rarr;</button>
+      <p class="fine">We'll only use this to follow up about Basin Powered Dispatch.</p>
+    </form>
+  </div>
+</section>""")
+
+PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
+"Opening the Basin Powered Dispatch demo.", f"""
+<section class="hero">
+  <div class="wrap center">
+    <div class="eyebrow">You're in</div>
+    <h1>Opening the demo&hellip;</h1>
+    <p class="lead" style="margin:18px auto 0">If it doesn't open in a few seconds, tap below.</p>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="{APP}/demo/">Open the demo</a></div>
+  </div>
+</section>
+<script>setTimeout(function(){{location.href="{APP}/demo/"}},2500)</script>""")
+
+out = Path(__file__).parent
+for fname, (title, desc, body) in PAGES.items():
+    active = fname if fname in dict(NAV) else ""
+    (out / fname).write_text(head(title, desc) + header(active) + body + FOOTER, encoding="utf-8")
+    print("wrote", fname)
