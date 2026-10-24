@@ -141,8 +141,8 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
     <h2>Four steps. No whiteboard.</h2>
     <div class="cards four" style="text-align:left">
       <div class="card"><div class="step-num">1</div><h3>Job order received</h3><p>Call, text, email or form. Every order lands in one place.</p></div>
-      <div class="card"><div class="step-num">2</div><h3>Dispatch team gets alerted</h3><p>Use automation or manually select drivers. No response? It moves to the next.</p></div>
-      <div class="card"><div class="step-num">3</div><h3>Driver is offered or assigned</h3><p>Driver taps Accept or Decline.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>Dispatch team gets alerted</h3><p>Use automation or manually select drivers.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>Trucks hit the road</h3><p>Driver taps Accept, gets the map pin, and rolls. One tap updates each stop.</p></div>
       <div class="card"><div class="step-num">4</div><h3>Visibility of the fleet</h3><p>Carriers and operators see real-time progress of the job.</p></div>
     </div>
   </div>
