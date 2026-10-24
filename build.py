@@ -150,7 +150,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
   <div class="wrap">
     <div class="cards two" style="margin-top:0">
       <div class="aud"><div class="eyebrow">For carriers</div><h2>Fill every load.</h2><p>Know who's on, offer jobs in order, and track every truck from one screen.</p><a class="more" href="carriers.html">For carriers &rarr;</a></div>
-      <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast.</h2><p>See which haulers have trucks open, pick one, or send the job to all of them.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
+      <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast &amp; save time.</h2><p>See which haulers have availability and save time on the phone. Pick one or send to them all. Request dispatch in a couple of clicks.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
     </div>
   </div>
 </section>
