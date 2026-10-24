@@ -182,3 +182,30 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 .avail-row small{display:block;color:var(--gray-600)}
 .avail-row.you{border:2px solid var(--blue)}
 .avail-cta{text-align:center;background:var(--blue);color:#fff;font-weight:700;border-radius:10px;padding:11px;margin-top:6px}
+/* Reports mock */
+.reports{background:#F2F4F7;border-radius:16px;padding:16px;box-shadow:0 20px 60px rgba(11,31,56,.18);font-size:.8rem;color:var(--gray-900)}
+.r-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.r-top b{font-family:var(--head);font-size:1.3rem}
+.r-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.r-kpis div{background:#fff;border:1px solid #E4E8EE;border-radius:10px;padding:10px}
+.r-kpis small{display:block;color:var(--gray-600);font-size:.7rem}
+.r-kpis b{display:block;font-family:var(--head);font-size:1.5rem;line-height:1.1}
+.r-kpis em{font-style:normal;color:var(--gray-600);font-size:.68rem}
+.r-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:8px;margin-bottom:8px}
+.r-card{background:#fff;border:1px solid #E4E8EE;border-radius:10px;padding:12px}
+.r-card h4{font-family:var(--head);font-size:1rem;margin-bottom:8px}
+.rbars{display:flex;align-items:flex-end;gap:8px;height:110px}
+.rbar{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.rbar i{display:block;width:100%;background:#1F5FB8;border-radius:4px 4px 0 0}
+.rbar span{font-size:.62rem;color:var(--gray-600);margin-top:4px}
+.rop{position:relative;padding:6px 8px;margin-bottom:6px;display:flex;justify-content:space-between;gap:8px;font-size:.74rem;border-radius:6px;overflow:hidden}
+.rop i{position:absolute;left:0;top:0;bottom:0;background:var(--sky);z-index:0}
+.rop span,.rop b{position:relative;z-index:1}
+.rop b{white-space:nowrap}
+.rtable{width:100%;border-collapse:collapse;font-size:.76rem}
+.rtable th{text-align:left;color:var(--gray-600);font-weight:600;padding:4px 6px;border-bottom:1px solid #E4E8EE}
+.rtable td{padding:7px 6px;border-bottom:1px solid #F0F2F5}
+.rtable small{color:var(--gray-600)}
+.rpct{background:#DDF5E6;color:#1C7A43;border-radius:999px;padding:2px 8px;font-weight:700}
+.rpct.lo{background:#FFF1D6;color:#9A6400}
+@media(max-width:520px){.r-kpis{grid-template-columns:repeat(2,1fr)}.r-grid{grid-template-columns:1fr}}
