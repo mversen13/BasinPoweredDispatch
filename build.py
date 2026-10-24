@@ -150,7 +150,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
   <div class="wrap">
     <div class="cards two" style="margin-top:0">
       <div class="aud"><div class="eyebrow">For carriers</div><h2>Fill every load.</h2><p>Know who's on, offer jobs in order, and track every truck from one screen.</p><a class="more" href="carriers.html">For carriers &rarr;</a></div>
-      <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast &amp; save time.</h2><p>See which haulers have availability and save time on the phone. Pick one or send to them all. Request dispatch in a couple of clicks.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
+      <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast. No phone calls.</h2><p>See which haulers have availability. Pick one or send to them all. Request dispatch in a couple of clicks.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
     </div>
   </div>
 </section>
@@ -215,8 +215,8 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
   <div class="wrap grid">
     <div>
       <div class="eyebrow">For operators</div>
-      <h1>Know who can haul before you pick up the phone.</h1>
-      <p class="lead" style="margin-top:18px">See which carriers have trucks open right now, and get one moving in a few taps.</p>
+      <h1>Get trucks moving without picking up the phone.</h1>
+      <p class="lead" style="margin-top:18px">See which haulers have availability right now. Pick one or send to them all. Request dispatch in a couple of clicks.</p>
       <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
     </div>
     <div>{BOARD}</div>
