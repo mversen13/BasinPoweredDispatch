@@ -123,7 +123,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
       <div class="eyebrow">Powering basins across the U.S.</div>
       <h1>No missed calls.<br>No missed loads.</h1>
       <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer. The operator sees the truck coming. Nobody's calling down a list.</p>
-      <p class="lead" style="margin-top:12px;color:#fff;font-weight:600">One network connecting operators with the crews powering the basin.</p>
+      <p class="lead" style="margin-top:12px;color:#fff;font-weight:600">Bridging the gap between operators and the crews that keep the basin running.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div class="mock-stack">{BOARD}{PHONE}</div>
