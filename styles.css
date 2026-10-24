@@ -174,3 +174,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:rgba(255,255,255,.75)}
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
 @media(max-width:1100px) and (min-width:901px){.mock-stack .phone{right:0;width:212px}.mock-stack .board{margin-right:170px}}
+/* Operator availability mock */
+.avail{background:#F7F9FC;border-radius:16px;padding:16px;box-shadow:0 20px 60px rgba(11,31,56,.18);font-size:.85rem}
+.avail-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.avail-top b{font-family:var(--head);font-size:1.1rem}
+.avail-row{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid #E4E8EE;border-radius:10px;padding:12px;margin-bottom:8px}
+.avail-row small{display:block;color:var(--gray-600)}
+.avail-row.you{border:2px solid var(--blue)}
+.avail-cta{text-align:center;background:var(--blue);color:#fff;font-weight:700;border-radius:10px;padding:11px;margin-top:6px}

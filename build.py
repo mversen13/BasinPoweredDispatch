@@ -187,7 +187,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
     <div>
       <div class="eyebrow">For carriers</div>
       <h1>Fill every load without working the phone.</h1>
-      <p class="lead" style="margin-top:18px">Built for vac and water haulers running 10 to 75 trucks.</p>
+      <p class="lead" style="margin-top:18px">Built for the 24/7 pace of oilfield hauling.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>{PHONE}</div>
@@ -197,9 +197,9 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 <section>
   <div class="wrap">
     <div class="cards">
-      <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver: on, off, or on a job.</p></div>
-      <div class="card"><div class="icon">&#8635;</div><h3>Offers go out in order</h3><p>Up next gets it first. No answer, it rolls to the next driver.</p></div>
-      <div class="card"><div class="icon">&#128241;</div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
+      <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job, or returning from one.</p></div>
+      <div class="card"><div class="icon">&#8635;</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next, or pick the driver yourself. No answer? It rolls to the next one.</p></div>
+      <div class="card"><div class="icon"><img src="icon-b.png" alt="" style="width:30px;height:auto"></div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
       <div class="card"><div class="icon">&#9201;</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
       <div class="card"><div class="icon">&#9742;</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
       <div class="card"><div class="icon">&#10003;</div><h3>Operators stay updated</h3><p>They see status themselves. Fewer callbacks.</p></div>
@@ -208,14 +208,34 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 </section>
 
 <section class="alt">
+  <div class="wrap split rev">
+    <div>
+      <div class="avail" aria-hidden="true">
+        <div class="avail-top"><b>Operator view &middot; Trucks available</b><span class="pill blue">Midland</span></div>
+        <div class="avail-row you"><span><b>Your company</b><small>Vac &middot; Water</small></span><span class="pill green">4 trucks open</span></div>
+        <div class="avail-row"><span><b>Caprock Fluid Services</b><small>Water</small></span><span class="pill green">2 trucks open</span></div>
+        <div class="avail-row"><span><b>Lone Star Vac</b><small>Vac</small></span><span class="pill amber">1 truck open</span></div>
+        <div class="avail-cta">Request dispatch &rarr;</div>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">Grow with the network</div>
+      <h2>Get in front of new operators.</h2>
+      <p class="lead">As the network grows, so do your opportunities. Operators looking for trucks see who's available, so new job orders can find you.</p>
+      <ul class="checks"><li>Show up when operators need trucks</li><li>Work with operators you don't know yet</li><li>More operators on the network, more jobs for you</li></ul>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap split">
     <div>{BOARD}</div>
     <div>
       <div class="eyebrow">Free to start</div>
       <h2>Your first 30 dispatch hauls are free.</h2>
       <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
-      <ul class="checks"><li>Get found by operators looking for trucks</li><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -254,7 +274,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <h2>Your first 10 job orders are free.</h2>
       <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
       <ul class="checks"><li>Invite your haulers. Free for them to join</li><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Join as an operator</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
