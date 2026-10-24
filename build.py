@@ -3,7 +3,7 @@ from pathlib import Path
 
 APP = "https://basinpowereddispatch.com"
 NAV = [("index.html", "Home"), ("carriers.html", "Carriers"), ("operators.html", "Operators"),
-       ("about.html", "About"), ("faq.html", "FAQ")]
+       ("about.html", "About")]
 
 
 def head(title, desc):
@@ -35,13 +35,14 @@ def header(active):
 <header>
   <div class="wrap nav">
     <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
-      <img src="logo.png" alt="Basin Powered Dispatch" width="168" height="40">
+      <img src="logo-light.png" alt="Basin Powered Dispatch" width="168" height="40">
     </a>
     <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
     <ul id="menu">
       {links}
       <li><a href="{APP}/">Sign in</a></li>
       <li><a href="demo.html">Try the demo</a></li>
+      <li><a href="contact.html"{" class=active" if active == "contact.html" else ""}>Contact</a></li>
       <li><a class="btn btn-primary" href="join.html">Try it free</a></li>
     </ul>
   </div>
@@ -57,6 +58,8 @@ FOOTER = f"""
     <nav>
       <a href="join.html">Try it free</a>
       <a href="demo.html">Try the demo</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
       <a href="{APP}/">Sign in</a>
       <a href="{APP}/privacy/">Privacy</a>
       <a href="{APP}/terms/">Terms</a>
@@ -551,6 +554,46 @@ PAGES["join.html"] = ("Try It Free · Basin Powered Dispatch",
 if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
 </script>""")
 
+PAGES["contact.html"] = ("Contact · Basin Powered Dispatch",
+"Get in touch with Basin Powered Dispatch.", """
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h1>Talk to us.</h1>
+      <p class="lead" style="margin-top:18px">Questions, setup help, or want a walkthrough? Send us a note and we'll get back to you quickly.</p>
+      <p class="lead" style="margin-top:14px">Common questions? See the <a href="faq.html" style="color:#fff;text-decoration:underline">FAQ</a>.</p>
+    </div>
+    <form class="form-card" name="contact" method="POST" action="contact-thanks.html" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <h3>Send us a message</h3>
+      <p class="sub">We usually reply the same day.</p>
+      <div class="row2">
+        <div class="field"><label for="cname">Name</label><input id="cname" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="ccompany">Company</label><input id="ccompany" name="company" autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="cphone">Phone</label><input id="cphone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="cemail">Email</label><input id="cemail" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="cmsg">Message</label><textarea id="cmsg" name="message" rows="4" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Send message &rarr;</button>
+    </form>
+  </div>
+</section>""")
+
+PAGES["contact-thanks.html"] = ("Message sent · Basin Powered Dispatch",
+"Thanks for reaching out to Basin Powered Dispatch.", """
+<section class="hero">
+  <div class="wrap center">
+    <div class="eyebrow">Message sent</div>
+    <h1>Thanks. We'll be in touch.</h1>
+    <p class="lead" style="margin:18px auto 0">In the meantime, take a look around.</p>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="demo.html">Try the demo</a><a class="btn btn-ghost" href="index.html">Back to home</a></div>
+  </div>
+</section>""")
+
 PAGES["join-thanks.html"] = ("You're on the list · Basin Powered Dispatch",
 "Thanks for joining Basin Powered Dispatch.", """
 <section class="hero">
@@ -576,6 +619,6 @@ PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
 
 out = Path(__file__).parent
 for fname, (title, desc, body) in PAGES.items():
-    active = fname if fname in dict(NAV) else ""
+    active = fname
     (out / fname).write_text(head(title, desc) + header(active) + body + FOOTER, encoding="utf-8")
     print("wrote", fname)
