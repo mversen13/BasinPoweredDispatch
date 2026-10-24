@@ -126,7 +126,7 @@ section{padding:84px 0}
 .offer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:.8rem;margin:10px 0 16px}
 .offer dt{color:var(--gray-600)}
 .offer .yn{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.offer .yn div{text-align:center;padding:11px;border-radius:10px;font-weight:700}
+.offer .yn div{text-align:center;padding:10px 4px;border-radius:10px;font-weight:700;font-size:.8rem;min-width:0}
 .yes{background:#2DBE6C;color:#fff}.no{background:var(--gray-100);color:var(--gray-600)}
 .mini{margin-top:12px;background:var(--white);border:1px solid #E4E8EE;border-radius:12px;padding:12px;font-size:.78rem;display:flex;justify-content:space-between}
 .mock-stack{position:relative}

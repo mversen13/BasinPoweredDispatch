@@ -41,7 +41,8 @@ def header(active):
     <ul id="menu">
       {links}
       <li><a href="{APP}/">Sign in</a></li>
-      <li><a class="btn btn-primary" href="demo.html">Try the demo</a></li>
+      <li><a href="demo.html">Try the demo</a></li>
+      <li><a class="btn btn-primary" href="join.html">Join free</a></li>
     </ul>
   </div>
 </header>
@@ -54,6 +55,7 @@ FOOTER = f"""
   <div class="wrap">
     <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch</div>
     <nav>
+      <a href="join.html">Join free</a>
       <a href="demo.html">Try the demo</a>
       <a href="{APP}/">Sign in</a>
       <a href="{APP}/privacy/">Privacy</a>
@@ -71,7 +73,7 @@ CTA = """
   <div class="wrap">
     <h2>See it in two minutes.</h2>
     <p class="lead">Click through a sample hauling company as the dispatcher, the driver, or the operator.</p>
-    <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+    <div class="btns"><a class="btn btn-primary" href="join.html">Join free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
   </div>
 </section>"""
 
@@ -121,7 +123,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
       <div class="eyebrow">Dispatch for oilfield haulers</div>
       <h1>No missed calls.<br>No missed loads.</h1>
       <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer on his phone. The operator sees the truck coming. Nobody's calling down a list.</p>
-      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a><a class="btn btn-ghost" href="#how">How it works</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html">Join free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div class="mock-stack">{BOARD}{PHONE}</div>
   </div>
@@ -156,9 +158,18 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
 </section>
 
 <section>
+  <div class="wrap center">
+    <div class="eyebrow">One network</div>
+    <h2>Operators and carriers. One platform.</h2>
+    <p class="lead">Operators send jobs. Carriers fill them. The more haulers and operators on Basin, the faster trucks move.</p>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="join.html?type=operator">Join as an operator</a></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
   <div class="wrap">
     <div class="free">
-      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay when you grow.</h2><p>No contracts to get going. Plans scale with your fleet. Ask us on a demo.</p></div>
+      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay when you grow.</h2><p>No contracts to get going. Plans scale with your fleet.</p><div class="btns" style="margin-top:20px"><a class="btn" style="background:#fff;color:var(--navy)" href="join.html">Join free</a></div></div>
       <div class="tiers">
         <div class="tier"><b>Carriers</b>Free for 30 dispatch jobs a month</div>
         <div class="tier"><b>Operators</b>Free for your first 10 job orders</div>
@@ -176,7 +187,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
       <div class="eyebrow">For carriers</div>
       <h1>Fill every load without working the phone.</h1>
       <p class="lead" style="margin-top:18px">Built for vac and water haulers running 10 to 75 trucks.</p>
-      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Join free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>{PHONE}</div>
   </div>
@@ -202,8 +213,8 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
       <div class="eyebrow">Free to start</div>
       <h2>30 dispatch jobs a month, free.</h2>
       <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
-      <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
-      <div class="btns"><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <ul class="checks"><li>Get found by operators looking for trucks</li><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -217,7 +228,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <div class="eyebrow">For operators</div>
       <h1>Get trucks moving without picking up the phone.</h1>
       <p class="lead" style="margin-top:18px">See which haulers have availability right now. Pick one or send to them all. Request dispatch in a couple of clicks.</p>
-      <div class="btns"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Join free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>{BOARD}</div>
   </div>
@@ -241,8 +252,8 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <div class="eyebrow">Free to start</div>
       <h2>Your first 10 job orders are free.</h2>
       <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
-      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
-      <div class="btns"><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <ul class="checks"><li>Invite your haulers. Free for them to join</li><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Join as an operator</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -294,6 +305,7 @@ FAQS = [
     ("Does it handle billing or payments?", "No. We stick to dispatch. No money runs through the platform, and your billing stays how it is today."),
     ("Can operators and carriers both use it?", "Yes. Carriers dispatch their own drivers. Operators can see who's available, pick a carrier, or send a job to all of them."),
     ("Where do you work?", "We're starting in the Permian Basin and expanding from there."),
+    ("How do I join?", "Tap Join free, tell us if you're a carrier or an operator, and we'll get you set up. No contract."),
     ("Can I try it first?", "Yes. The demo is a sample hauling company you can click through as the dispatcher, a driver, or an operator. Nothing is real and nothing gets sent."),
 ]
 
@@ -354,6 +366,60 @@ PAGES["demo.html"] = ("Try the Demo · Basin Powered Dispatch",
       <button class="btn btn-primary" type="submit">Open the demo &rarr;</button>
       <p class="fine">We'll only use this to follow up about Basin Powered Dispatch.</p>
     </form>
+  </div>
+</section>""")
+
+PAGES["join.html"] = ("Join Free · Basin Powered Dispatch",
+"Join Basin Powered Dispatch free as a carrier or an operator.", """
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Join free</div>
+      <h1>Get on the platform.</h1>
+      <p class="lead" style="margin-top:18px">Carriers and operators join free. We'll reach out and get you set up.</p>
+      <ul class="checks" style="color:#fff">
+        <li>Carriers: free for 30 dispatch jobs a month</li>
+        <li>Operators: free for your first 10 job orders</li>
+        <li>No contract. No payments run through us.</li>
+      </ul>
+    </div>
+    <form class="form-card" name="join" method="POST" action="join-thanks.html" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="join">
+      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <h3>Join Basin Powered Dispatch</h3>
+      <p class="sub">Takes 30 seconds.</p>
+      <div class="field"><label for="jtype">I'm a&hellip;</label>
+        <select id="jtype" name="type" required><option value="">Choose one</option><option value="Carrier">Carrier / trucking company</option><option value="Operator">Operator</option></select></div>
+      <div class="row2">
+        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="jbasin">Basin</label><select id="jbasin" name="basin"><option>Permian</option><option>Bakken</option><option>Other</option></select></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Join free &rarr;</button>
+      <p class="fine">We'll only use this to get you set up on Basin Powered Dispatch.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){var t=new URLSearchParams(location.search).get('type');var s=document.getElementById('jtype');
+if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
+</script>""")
+
+PAGES["join-thanks.html"] = ("You're on the list · Basin Powered Dispatch",
+"Thanks for joining Basin Powered Dispatch.", """
+<section class="hero">
+  <div class="wrap center">
+    <div class="eyebrow">You're in</div>
+    <h1>Thanks. We'll be in touch.</h1>
+    <p class="lead" style="margin:18px auto 0">We'll call or text you shortly to get you set up. Want a look in the meantime?</p>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="demo.html">Try the demo</a></div>
   </div>
 </section>""")
 

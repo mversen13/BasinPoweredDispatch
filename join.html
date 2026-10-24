@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Join Free · Basin Powered Dispatch</title>
+<meta name="description" content="Join Basin Powered Dispatch free as a carrier or an operator.">
+<meta name="theme-color" content="#0B1F38">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Join Free · Basin Powered Dispatch">
+<meta property="og:description" content="Join Basin Powered Dispatch free as a carrier or an operator.">
+<meta property="og:image" content="https://basinpowerdispatch.com/og-image.jpg">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
+      <img src="logo.png" alt="Basin Powered Dispatch" width="168" height="40">
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html">About</a></li><li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://rigready1.netlify.app/">Sign in</a></li>
+      <li><a href="demo.html">Try the demo</a></li>
+      <li><a class="btn btn-primary" href="join.html">Join free</a></li>
+    </ul>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Join free</div>
+      <h1>Get on the platform.</h1>
+      <p class="lead" style="margin-top:18px">Carriers and operators join free. We'll reach out and get you set up.</p>
+      <ul class="checks" style="color:#fff">
+        <li>Carriers: free for 30 dispatch jobs a month</li>
+        <li>Operators: free for your first 10 job orders</li>
+        <li>No contract. No payments run through us.</li>
+      </ul>
+    </div>
+    <form class="form-card" name="join" method="POST" action="join-thanks.html" data-netlify="true" netlify-honeypot="company-url">
+      <input type="hidden" name="form-name" value="join">
+      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <h3>Join Basin Powered Dispatch</h3>
+      <p class="sub">Takes 30 seconds.</p>
+      <div class="field"><label for="jtype">I'm a&hellip;</label>
+        <select id="jtype" name="type" required><option value="">Choose one</option><option value="Carrier">Carrier / trucking company</option><option value="Operator">Operator</option></select></div>
+      <div class="row2">
+        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required autocomplete="organization"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="jbasin">Basin</label><select id="jbasin" name="basin"><option>Permian</option><option>Bakken</option><option>Other</option></select></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Join free &rarr;</button>
+      <p class="fine">We'll only use this to get you set up on Basin Powered Dispatch.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function(){var t=new URLSearchParams(location.search).get('type');var s=document.getElementById('jtype');
+if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
+</script>
+</main>
+<footer>
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch</div>
+    <nav>
+      <a href="join.html">Join free</a>
+      <a href="demo.html">Try the demo</a>
+      <a href="https://rigready1.netlify.app/">Sign in</a>
+      <a href="https://rigready1.netlify.app/privacy/">Privacy</a>
+      <a href="https://rigready1.netlify.app/terms/">Terms</a>
+    </nav>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
