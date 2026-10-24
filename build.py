@@ -17,7 +17,7 @@ def head(title, desc, fname="index.html"):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{SITE}/{"" if fname=="index.html" else fname}">
-<meta name="theme-color" content="#0B1F38">
+<meta name="theme-color" content="#0B1F38">{(chr(10)+'<meta http-equiv="refresh" content="3;url='+APP+'/demo/">') if fname=="demo-ready.html" else ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -237,7 +237,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
     <div class="eyebrow">Join the network. Power the basin.</div>
     <h2>Operators and carriers. One platform.</h2>
     <p class="lead">The basin runs on carriers getting the right trucks, equipment and material to operators. Operators send jobs. Carriers fill them. The more haulers and operators on Basin, the faster trucks move.</p>
-    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="join.html?type=operator">Join as an operator</a></div>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="join.html">Join as a carrier</a><a class="btn btn-dark" href="join.html">Join as an operator</a></div>
   </div>
 </section>
 
@@ -262,7 +262,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
       <div class="eyebrow">For carriers</div>
       <h1>Fill every load without working the phone.</h1>
       <p class="lead" style="margin-top:18px">Built for the 24/7 pace of oilfield hauling.</p>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>{PHONE}</div>
   </div>
@@ -289,7 +289,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
       <h2>Your first 30 dispatch hauls are free.</h2>
       <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
       <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -340,7 +340,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <div class="eyebrow">For operators</div>
       <h1>Get trucks moving without picking up the phone.</h1>
       <p class="lead" style="margin-top:18px">See which haulers have availability right now. Pick one or send to them all. Request dispatch in a couple of clicks.</p>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>{OP_AVAIL}</div>
   </div>
@@ -367,7 +367,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <h2>Your first 10 job orders are free.</h2>
       <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
       <ul class="checks"><li>Works with your current carriers</li><li>No payments run through Basin Powered Dispatch</li><li>Flat pricing, not per job</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -619,7 +619,7 @@ PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
     <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="{APP}/demo/">Open the demo</a></div>
   </div>
 </section>
-<div data-redirect="{APP}/demo/" hidden></div>""")
+""")
 
 PAGES.pop("faq.html", None)  # FAQ hidden for now
 
