@@ -106,7 +106,7 @@ PHONE = """
     <div class="tag">Offer &middot; 6:00 AM</div>
     <h5>Red Mesa 14H</h5>
     <dl><dt>Load</dt><dd>Fresh water</dd><dt>Trucks</dt><dd>2</dd><dt>County</dt><dd>Midland</dd></dl>
-    <div class="yn"><div class="yes">Yes</div><div class="no">No</div></div>
+    <div class="yn"><div class="yes">Accept</div><div class="no">Decline</div></div>
   </div>
   <div class="mini"><span>Pin sent to your maps</span><b>&#10003;</b></div>
 </div></div>"""
@@ -138,10 +138,10 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
     <div class="eyebrow">How it works</div>
     <h2>Four steps. No whiteboard.</h2>
     <div class="cards four" style="text-align:left">
-      <div class="card"><div class="step-num">1</div><h3>Order comes in</h3><p>Call, text, email or form. Every order lands in one place.</p></div>
-      <div class="card"><div class="step-num">2</div><h3>Driver gets the offer</h3><p>Sent to who's on and up next. No answer? It moves on.</p></div>
-      <div class="card"><div class="step-num">3</div><h3>Driver taps Yes</h3><p>Then On my way, On site, Done. One tap each.</p></div>
-      <div class="card"><div class="step-num">4</div><h3>Operator sees it</h3><p>Live status on every truck. No callbacks.</p></div>
+      <div class="card"><div class="step-num">1</div><h3>Job order received</h3><p>Call, text, email or form. Every order lands in one place.</p></div>
+      <div class="card"><div class="step-num">2</div><h3>Dispatch team gets alerted</h3><p>Use automation or manually select drivers. No response? It moves to the next.</p></div>
+      <div class="card"><div class="step-num">3</div><h3>Driver is offered or assigned</h3><p>Driver taps Accept or Decline.</p></div>
+      <div class="card"><div class="step-num">4</div><h3>Visibility of the fleet</h3><p>Carriers and operators see real-time progress of the job.</p></div>
     </div>
   </div>
 </section>
@@ -187,7 +187,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
     <div class="cards">
       <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver: on, off, or on a job.</p></div>
       <div class="card"><div class="icon">&#8635;</div><h3>Offers go out in order</h3><p>Up next gets it first. No answer, it rolls to the next driver.</p></div>
-      <div class="card"><div class="icon">&#128241;</div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Yes and goes.</p></div>
+      <div class="card"><div class="icon">&#128241;</div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
       <div class="card"><div class="icon">&#9201;</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
       <div class="card"><div class="icon">&#9742;</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
       <div class="card"><div class="icon">&#10003;</div><h3>Operators stay updated</h3><p>They see status themselves. Fewer callbacks.</p></div>
