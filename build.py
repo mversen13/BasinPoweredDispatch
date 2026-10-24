@@ -23,7 +23,7 @@ def head(title, desc):
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://basinpowerdispatch.com/og-image.jpg">
+<meta property="og:image" content="https://basinpowereddispatch.com/og-image.jpg">
 </head>
 <body>"""
 
