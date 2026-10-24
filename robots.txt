@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /demo-ready.html
+Disallow: /join-thanks.html
+Disallow: /contact-thanks.html
+Sitemap: https://basinpowereddispatch.com/sitemap.xml

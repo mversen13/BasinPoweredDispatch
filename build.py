@@ -6,7 +6,9 @@ NAV = [("index.html", "Home"), ("carriers.html", "Carriers"), ("operators.html",
        ("about.html", "About")]
 
 
-def head(title, desc):
+SITE = "https://basinpowereddispatch.com"
+
+def head(title, desc, fname="index.html"):
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +16,7 @@ def head(title, desc):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="canonical" href="{SITE}/{"" if fname=="index.html" else fname}">
 <meta name="theme-color" content="#0B1F38">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -621,8 +624,23 @@ PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
 <script>setTimeout(function(){{location.href="{APP}/demo/"}},2500)</script>""")
 
 PAGES.pop("faq.html", None)  # FAQ hidden for now
+
+PAGES["404.html"] = ("Page not found · Basin Powered Dispatch",
+"This page doesn't exist.", """
+<section class="hero">
+  <div class="wrap center">
+    <div class="eyebrow">404</div>
+    <h1>That page took a wrong turn.</h1>
+    <p class="lead" style="margin:18px auto 0">The page you're looking for isn't here.</p>
+    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="/">Back to home</a><a class="btn btn-ghost" href="/demo.html">Try the demo</a></div>
+  </div>
+</section>""")
 out = Path(__file__).parent
 for fname, (title, desc, body) in PAGES.items():
     active = fname
-    (out / fname).write_text(head(title, desc) + header(active) + body + FOOTER, encoding="utf-8")
+    (out / fname).write_text(head(title, desc, fname) + header(active) + body + FOOTER, encoding="utf-8")
     print("wrote", fname)
+
+public = [f for f in PAGES if f not in ("404.html","demo-ready.html","join-thanks.html","contact-thanks.html")]
+(out / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{SITE}/{"" if f=="index.html" else f}</loc></url>\n' for f in public) + '</urlset>\n', encoding="utf-8")
+(out / "robots.txt").write_text(f"User-agent: *\nDisallow: /demo-ready.html\nDisallow: /join-thanks.html\nDisallow: /contact-thanks.html\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
