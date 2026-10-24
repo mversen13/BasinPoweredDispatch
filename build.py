@@ -92,7 +92,7 @@ CTA = """
 <section class="cta">
   <div class="wrap">
     <h2>Why wait? Try it free.</h2>
-    <p class="lead">Join the network free, or click through the demo first. It takes two minutes.</p>
+    <p class="lead">Join the network free or click through the demo first. It takes two minutes.</p>
     <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
   </div>
 </section>"""
@@ -268,8 +268,8 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 <section class="tight">
   <div class="wrap">
     <div class="cards compact">
-      <div class="card"><div class="icon">{ic(I["users"])}</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job, or returning from one.</p></div>
-      <div class="card"><div class="icon">{ic(I["rotate"])}</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next, or pick the driver yourself. No answer? It rolls to the next one.</p></div>
+      <div class="card"><div class="icon">{ic(I["users"])}</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job or returning from one.</p></div>
+      <div class="card"><div class="icon">{ic(I["rotate"])}</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next or pick the driver yourself. No answer? It rolls to the next one.</p></div>
       <div class="card"><div class="icon"><img src="icon-b.png" alt="" style="width:30px;height:auto"></div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
       <div class="card"><div class="icon">{ic(I["truck"])}</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
       <div class="card"><div class="icon">{ic(I["phone"])}</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
@@ -330,7 +330,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 {CTA}""")
 
 PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
-"See which oilfield haulers have trucks available, pick one, or send the job to all of them. Get trucks on the road in a few clicks.", f"""
+"See which oilfield haulers have trucks available, pick one or send the job to all of them. Get trucks on the road in a few clicks.", f"""
 <section class="hero small">
   <div class="wrap grid">
     <div>
@@ -347,7 +347,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
   <div class="wrap">
     <div class="cards compact">
       <div class="card"><div class="icon">{ic(I["eye"])}</div><h3>See who's available</h3><p>Live truck availability across carriers, closest first.</p></div>
-      <div class="card"><div class="icon">{ic(I["building"])}</div><h3>Pick a company</h3><p>Send to a hauler you already use, or try a new one.</p></div>
+      <div class="card"><div class="icon">{ic(I["building"])}</div><h3>Pick a company</h3><p>Send to a hauler you already use or try a new one.</p></div>
       <div class="card"><div class="icon">{ic(I["broadcast"])}</div><h3>Or send to all</h3><p>Busy day? Send it out. The first carrier to accept gets the job.</p></div>
       <div class="card"><div class="icon">{ic(I["activity"])}</div><h3>Track the status</h3><p>Every order, from accepted to trucks rolling to done.</p></div>
       <div class="card"><div class="icon">{ic(I["pin"])}</div><h3>Saved locations</h3><p>Pick a pad or battery you've ordered to before. No retyping or sending pins.</p></div>
@@ -365,10 +365,10 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <p class="lead">One short order. No calls, no texts, no chasing.</p>
       <ul class="checks">
         <li>Pick a saved location. Drivers get the pin and directions</li>
-        <li>Choose the service and how many trucks, or enter barrels</li>
-        <li>Add required certs, a JSA, or your own forms</li>
-        <li>As soon as possible, or schedule ahead</li>
-        <li>Send to one company, or to all of them</li>
+        <li>Choose the service and how many trucks or enter barrels</li>
+        <li>Add required certs, a JSA or your own forms</li>
+        <li>As soon as possible or schedule ahead</li>
+        <li>Send to one company or to all of them</li>
       </ul>
     </div>
   </div>
@@ -445,10 +445,10 @@ FAQS = [
     ("Who is it for?", "Trucking companies running about 10 to 75 trucks (vac, water and fluid haulers) and the operators who hire them."),
     ("What does it cost?", "Free to start. Carriers get their first 30 dispatch hauls free. Operators get their first 10 job orders free. Paid plans scale with fleet size. Ask us on a demo."),
     ("Does it handle billing or payments?", "No. We stick to dispatch. No money runs through the platform, and your billing stays how it is today."),
-    ("Can operators and carriers both use it?", "Yes. Carriers dispatch their own drivers. Operators can see who's available, pick a carrier, or send a job to all of them."),
+    ("Can operators and carriers both use it?", "Yes. Carriers dispatch their own drivers. Operators can see who's available, pick a carrier or send a job to all of them."),
     ("Where do you work?", "We're starting in the Permian Basin and expanding from there."),
     ("How do I join?", "Tap Try it free, tell us if you're a carrier or an operator, and we'll get you set up. No contract."),
-    ("Can I try it first?", "Yes. The demo is a sample hauling company you can click through as the dispatcher, a driver, or an operator. Nothing is real and nothing gets sent."),
+    ("Can I try it first?", "Yes. The demo is a sample hauling company you can click through as the dispatcher, a driver or an operator. Nothing is real and nothing gets sent."),
 ]
 
 PAGES["faq.html"] = ("FAQ · Basin Powered Dispatch",
@@ -474,13 +474,13 @@ PAGES["faq.html"] = ("FAQ · Basin Powered Dispatch",
 {CTA}""")
 
 PAGES["demo.html"] = ("Try the Demo · Basin Powered Dispatch",
-"Click through Basin Powered Dispatch as a dispatcher, driver, or operator.", """
+"Click through Basin Powered Dispatch as a dispatcher, driver or operator.", """
 <section class="hero">
   <div class="wrap grid">
     <div>
       <div class="eyebrow">Try the demo</div>
       <h1>Click through it yourself.</h1>
-      <p class="lead" style="margin-top:18px">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver, or the operator.</p>
+      <p class="lead" style="margin-top:18px">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver or the operator.</p>
       <ul class="checks" style="color:#fff">
         <li>Nothing is real. No texts or emails go out.</li>
         <li>Switch roles any time.</li>
@@ -561,7 +561,7 @@ PAGES["contact.html"] = ("Contact · Basin Powered Dispatch",
     <div>
       <div class="eyebrow">Contact</div>
       <h1>Talk to us.</h1>
-      <p class="lead" style="margin-top:18px">Questions, setup help, or want a walkthrough? Send us a note and we'll get back to you quickly.</p>
+      <p class="lead" style="margin-top:18px">Questions, setup help or want a walkthrough? Send us a note and we'll get back to you quickly.</p>
       <p class="lead" style="margin-top:14px">Common questions? See the <a href="faq.html" style="color:#fff;text-decoration:underline">FAQ</a>.</p>
     </div>
     <form class="form-card" name="contact" method="POST" action="contact-thanks.html" data-netlify="true" netlify-honeypot="company-url">
