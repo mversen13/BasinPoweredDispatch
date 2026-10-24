@@ -167,9 +167,9 @@ ORDER = """
   <div class="avail-top"><b>New order</b><span class="pill green">Ready to send</span></div>
   <div class="o-row"><i>1</i><div><small>Location</small><b>Red Mesa 31-4H Pad</b><em>Midland County &middot; saved</em></div></div>
   <div class="o-row"><i>2</i><div><small>Job order</small><b>Fresh water haul &middot; 2 trucks</b></div></div>
-  <div class="o-row"><i>3</i><div><small>Driver certifications</small><span class="chip">H2S</span><span class="chip">SafeLand / PEC</span></div></div>
+  <div class="o-row"><i>3</i><div><small>Driver certifications</small><span class="chip">H2S</span><span class="chip">SafeLand</span><span class="chip">PEC</span></div></div>
   <div class="o-row"><i>4</i><div><small>When</small><b>As soon as possible</b></div></div>
-  <div class="o-row"><i>5</i><div><small>JSA needed?</small><b>Yes</b></div></div>
+  <div class="o-row"><i>5</i><div><small>Required forms</small><b>JSA &middot; Site safety checklist</b></div></div>
   <div class="o-row"><i>6</i><div><small>Send to</small><b>Caprock Fluid Services</b><em>3 trucks free</em></div></div>
   <div class="avail-cta">Send order &rarr;</div>
 </div>"""
@@ -351,7 +351,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <div class="card"><div class="icon">{ic(I["broadcast"])}</div><h3>Or send to all</h3><p>Busy day? Send it out. The first carrier to accept gets the job.</p></div>
       <div class="card"><div class="icon">{ic(I["activity"])}</div><h3>Track the status</h3><p>Every order, from accepted to trucks rolling to done.</p></div>
       <div class="card"><div class="icon">{ic(I["pin"])}</div><h3>Saved locations</h3><p>Pick a pad or battery you've ordered to before. No retyping or sending pins.</p></div>
-      <div class="card"><div class="icon">{ic(I["shield"])}</div><h3>Compliance on the order</h3><p>Require certs like H2S, SafeLand / PEC or TWIC, and flag when a JSA is needed.</p></div>
+      <div class="card"><div class="icon">{ic(I["shield"])}</div><h3>Compliance on the order</h3><p>Require certs like H2S, SafeLand, PEC or TWIC. Add a JSA or your own required forms.</p></div>
     </div>
   </div>
 </section>
@@ -366,7 +366,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <ul class="checks">
         <li>Pick a saved location. Drivers get the pin and directions</li>
         <li>Choose the service and how many trucks, or enter barrels</li>
-        <li>Add required certs and JSA</li>
+        <li>Add required certs, a JSA, or your own forms</li>
         <li>As soon as possible, or schedule ahead</li>
         <li>Send to one company, or to all of them</li>
       </ul>
