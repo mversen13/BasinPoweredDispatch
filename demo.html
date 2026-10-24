@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="utils.css">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Try the Demo · Basin Powered Dispatch">
@@ -23,7 +24,7 @@
     <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
       <img src="logo-light.png" alt="Basin Powered Dispatch" width="168" height="40">
     </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="menu">&#9776;</button>
     <ul id="menu">
       <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html">About</a></li>
       <li><a href="https://basinpowereddispatch.com/">Sign in</a></li>
@@ -39,8 +40,8 @@
     <div>
       <div class="eyebrow">Try the demo</div>
       <h1>Click through it yourself.</h1>
-      <p class="lead" style="margin-top:18px">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver or the operator.</p>
-      <ul class="checks" style="color:#fff">
+      <p class="lead s1">A sample hauling company with 14 drivers and three weeks of work. Be the dispatcher, a driver or the operator.</p>
+      <ul class="checks s24">
         <li>Nothing is real. No texts or emails go out.</li>
         <li>Switch roles any time.</li>
         <li>Takes about two minutes.</li>
@@ -48,21 +49,21 @@
     </div>
     <form class="form-card" name="demo-request" method="POST" action="demo-ready.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="demo-request">
-      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <p class="hidden"><label>Leave blank <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
       <h3>Open the demo</h3>
       <p class="sub">Tell us who you are and we'll take you right in.</p>
       <div class="row2">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="company">Company</label><input id="company" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required maxlength="80" autocomplete="name"></div>
+        <div class="field"><label for="company">Company</label><input id="company" name="company" required maxlength="120" autocomplete="organization"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required maxlength="25" pattern="[0-9 +.\-\(\)]{7,25}" autocomplete="tel"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="120" autocomplete="email"></div>
       </div>
       <div class="row2">
         <div class="field"><label for="type">I'm a&hellip;</label>
           <select id="type" name="type" required><option value="">Choose one</option><option>Carrier / trucking company</option><option>Operator</option><option>Other</option></select></div>
-        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric" maxlength="4" pattern="[0-9]{1,4}"></div>
       </div>
       <button class="btn btn-primary" type="submit">Open the demo &rarr;</button>
       <p class="fine">We'll only use this to follow up about Basin Powered Dispatch.</p>
@@ -83,6 +84,6 @@
     </nav>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="main.js" defer></script>
 </body>
 </html>

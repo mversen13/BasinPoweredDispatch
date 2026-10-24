@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="utils.css">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Try It Free · Basin Powered Dispatch">
@@ -23,7 +24,7 @@
     <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
       <img src="logo-light.png" alt="Basin Powered Dispatch" width="168" height="40">
     </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="menu">&#9776;</button>
     <ul id="menu">
       <li><a href="index.html">Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html">About</a></li>
       <li><a href="https://basinpowereddispatch.com/">Sign in</a></li>
@@ -39,8 +40,8 @@
     <div>
       <div class="eyebrow">Join the network</div>
       <h1>Why wait? Try it free.</h1>
-      <p class="lead" style="margin-top:18px">Carriers and operators join free. We'll reach out and get you set up.</p>
-      <ul class="checks" style="color:#fff">
+      <p class="lead s1">Carriers and operators join free. We'll reach out and get you set up.</p>
+      <ul class="checks s24">
         <li>Carriers: free for your first 30 dispatch hauls</li>
         <li>Operators: free for your first 10 job orders</li>
         <li>No contract. No payments run through Basin Powered Dispatch.</li>
@@ -48,21 +49,21 @@
     </div>
     <form class="form-card" name="join" method="POST" action="join-thanks.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="join">
-      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <p class="hidden"><label>Leave blank <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
       <h3>Join the network</h3>
       <p class="sub">Takes 30 seconds.</p>
       <div class="field"><label for="jtype">I'm a&hellip;</label>
         <select id="jtype" name="type" required><option value="">Choose one</option><option value="Carrier">Carrier / trucking company</option><option value="Operator">Operator</option></select></div>
       <div class="row2">
-        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required maxlength="80" autocomplete="name"></div>
+        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required maxlength="120" autocomplete="organization"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required maxlength="25" pattern="[0-9 +.\-\(\)]{7,25}" autocomplete="tel"></div>
+        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required maxlength="120" autocomplete="email"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric" maxlength="4" pattern="[0-9]{1,4}"></div>
         <div class="field"><label for="jbasin">Basin</label><select id="jbasin" name="basin"><option>Permian</option><option>Bakken</option><option>Other</option></select></div>
       </div>
       <button class="btn btn-primary" type="submit">Try it free &rarr;</button>
@@ -70,10 +71,7 @@
     </form>
   </div>
 </section>
-<script>
-(function(){var t=new URLSearchParams(location.search).get('type');var s=document.getElementById('jtype');
-if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
-</script>
+
 </main>
 <footer>
   <div class="wrap">
@@ -88,6 +86,6 @@ if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
     </nav>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="main.js" defer></script>
 </body>
 </html>

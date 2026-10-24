@@ -22,6 +22,7 @@ def head(title, desc, fname="index.html"):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="utils.css">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="{title}">
@@ -40,7 +41,7 @@ def header(active):
     <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
       <img src="logo-light.png" alt="Basin Powered Dispatch" width="168" height="40">
     </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="menu">&#9776;</button>
     <ul id="menu">
       {links}
       <li><a href="{APP}/">Sign in</a></li>
@@ -68,7 +69,7 @@ FOOTER = f"""
     </nav>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="main.js" defer></script>
 </body>
 </html>
 """
@@ -495,21 +496,21 @@ PAGES["demo.html"] = ("Try the Demo · Basin Powered Dispatch",
     </div>
     <form class="form-card" name="demo-request" method="POST" action="demo-ready.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="demo-request">
-      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <p class="hidden"><label>Leave blank <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
       <h3>Open the demo</h3>
       <p class="sub">Tell us who you are and we'll take you right in.</p>
       <div class="row2">
-        <div class="field"><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="company">Company</label><input id="company" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" required maxlength="80" autocomplete="name"></div>
+        <div class="field"><label for="company">Company</label><input id="company" name="company" required maxlength="120" autocomplete="organization"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required maxlength="25" pattern="[0-9 +.\\-\\(\\)]{7,25}" autocomplete="tel"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="120" autocomplete="email"></div>
       </div>
       <div class="row2">
         <div class="field"><label for="type">I'm a&hellip;</label>
           <select id="type" name="type" required><option value="">Choose one</option><option>Carrier / trucking company</option><option>Operator</option><option>Other</option></select></div>
-        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="trucks">Trucks (optional)</label><input id="trucks" name="trucks" inputmode="numeric" maxlength="4" pattern="[0-9]{1,4}"></div>
       </div>
       <button class="btn btn-primary" type="submit">Open the demo &rarr;</button>
       <p class="fine">We'll only use this to follow up about Basin Powered Dispatch.</p>
@@ -533,21 +534,21 @@ PAGES["join.html"] = ("Try It Free · Basin Powered Dispatch",
     </div>
     <form class="form-card" name="join" method="POST" action="join-thanks.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="join">
-      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <p class="hidden"><label>Leave blank <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
       <h3>Join the network</h3>
       <p class="sub">Takes 30 seconds.</p>
       <div class="field"><label for="jtype">I'm a&hellip;</label>
         <select id="jtype" name="type" required><option value="">Choose one</option><option value="Carrier">Carrier / trucking company</option><option value="Operator">Operator</option></select></div>
       <div class="row2">
-        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required autocomplete="organization"></div>
+        <div class="field"><label for="jname">Name</label><input id="jname" name="name" required maxlength="80" autocomplete="name"></div>
+        <div class="field"><label for="jcompany">Company</label><input id="jcompany" name="company" required maxlength="120" autocomplete="organization"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="jphone">Phone</label><input id="jphone" name="phone" type="tel" required maxlength="25" pattern="[0-9 +.\\-\\(\\)]{7,25}" autocomplete="tel"></div>
+        <div class="field"><label for="jemail">Email</label><input id="jemail" name="email" type="email" required maxlength="120" autocomplete="email"></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric"></div>
+        <div class="field"><label for="jtrucks">Trucks (carriers)</label><input id="jtrucks" name="trucks" inputmode="numeric" maxlength="4" pattern="[0-9]{1,4}"></div>
         <div class="field"><label for="jbasin">Basin</label><select id="jbasin" name="basin"><option>Permian</option><option>Bakken</option><option>Other</option></select></div>
       </div>
       <button class="btn btn-primary" type="submit">Try it free &rarr;</button>
@@ -555,10 +556,7 @@ PAGES["join.html"] = ("Try It Free · Basin Powered Dispatch",
     </form>
   </div>
 </section>
-<script>
-(function(){var t=new URLSearchParams(location.search).get('type');var s=document.getElementById('jtype');
-if(t==='carrier')s.value='Carrier';if(t==='operator')s.value='Operator';})();
-</script>""")
+""")
 
 PAGES["contact.html"] = ("Contact · Basin Powered Dispatch",
 "Get in touch with Basin Powered Dispatch.", """
@@ -571,19 +569,19 @@ PAGES["contact.html"] = ("Contact · Basin Powered Dispatch",
     </div>
     <form class="form-card" name="contact" method="POST" action="contact-thanks.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="contact">
-      <p class="hidden"><label>Leave blank <input name="company-url"></label></p>
+      <p class="hidden"><label>Leave blank <input name="company-url" tabindex="-1" autocomplete="off"></label></p>
       <h3>Send us a message</h3>
       <p class="sub">We usually reply the same day.</p>
       <div class="row2">
-        <div class="field"><label for="cfirst">First name</label><input id="cfirst" name="first-name" required autocomplete="given-name"></div>
-        <div class="field"><label for="clast">Last name</label><input id="clast" name="last-name" required autocomplete="family-name"></div>
+        <div class="field"><label for="cfirst">First name</label><input id="cfirst" name="first-name" required maxlength="60" autocomplete="given-name"></div>
+        <div class="field"><label for="clast">Last name</label><input id="clast" name="last-name" required maxlength="60" autocomplete="family-name"></div>
       </div>
-      <div class="field"><label for="ccompany">Company</label><input id="ccompany" name="company" autocomplete="organization"></div>
+      <div class="field"><label for="ccompany">Company</label><input id="ccompany" name="company" maxlength="120" autocomplete="organization"></div>
       <div class="row2">
-        <div class="field"><label for="cphone">Phone</label><input id="cphone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="field"><label for="cemail">Email</label><input id="cemail" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="cphone">Phone</label><input id="cphone" name="phone" type="tel" maxlength="25" pattern="[0-9 +.\\-\\(\\)]{7,25}" autocomplete="tel"></div>
+        <div class="field"><label for="cemail">Email</label><input id="cemail" name="email" type="email" required maxlength="120" autocomplete="email"></div>
       </div>
-      <div class="field"><label for="cmsg">Message</label><textarea id="cmsg" name="message" rows="4" required></textarea></div>
+      <div class="field"><label for="cmsg">Message</label><textarea id="cmsg" name="message" rows="4" required maxlength="2000"></textarea></div>
       <button class="btn btn-primary" type="submit">Send message &rarr;</button>
     </form>
   </div>
@@ -621,7 +619,7 @@ PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
     <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="{APP}/demo/">Open the demo</a></div>
   </div>
 </section>
-<script>setTimeout(function(){{location.href="{APP}/demo/"}},2500)</script>""")
+<div data-redirect="{APP}/demo/" hidden></div>""")
 
 PAGES.pop("faq.html", None)  # FAQ hidden for now
 
@@ -636,10 +634,35 @@ PAGES["404.html"] = ("Page not found · Basin Powered Dispatch",
   </div>
 </section>""")
 out = Path(__file__).parent
+import re as _re
+_styles = {}
+def _destyle(html):
+    def tag(m):
+        t = m.group(0)
+        sm = _re.search(r'\sstyle="([^"]*)"', t)
+        if not sm: return t
+        css = sm.group(1)
+        cls = _styles.setdefault(css, "s%d" % (len(_styles) + 1))
+        t = t.replace(sm.group(0), "")
+        cm = _re.search(r'\sclass="([^"]*)"', t)
+        if cm: t = t.replace(cm.group(0), ' class="%s %s"' % (cm.group(1), cls))
+        else: t = t[:-1].rstrip("/").rstrip() + ' class="%s">' % cls if not t.endswith("/>") else t[:-2] + ' class="%s"/>' % cls
+        return t
+    return _re.sub(r"<[a-zA-Z][^<>]*>", tag, html)
+
 for fname, (title, desc, body) in PAGES.items():
     active = fname
-    (out / fname).write_text(head(title, desc, fname) + header(active) + body + FOOTER, encoding="utf-8")
+    html = _destyle(head(title, desc, fname) + header(active) + body + FOOTER)
+    if fname == "404.html":
+        html = html.replace('href="styles.css"','href="/styles.css"').replace('href="utils.css"','href="/utils.css"').replace('src="main.js"','src="/main.js"').replace('src="logo-light.png"','src="/logo-light.png"')
+    (out / fname).write_text(html, encoding="utf-8")
+    continue
+    (out / fname).write_text(_destyle(head(title, desc, fname) + header(active) + body + FOOTER), encoding="utf-8")
     print("wrote", fname)
+
+def _imp(css):
+    return ";".join(d.strip() + " !important" for d in css.split(";") if d.strip())
+(out / "utils.css").write_text("/* generated from page-level styles */\n" + "".join(".%s{%s}\n" % (c, _imp(css)) for css, c in _styles.items()), encoding="utf-8")
 
 public = [f for f in PAGES if f not in ("404.html","demo-ready.html","join-thanks.html","contact-thanks.html")]
 (out / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{SITE}/{"" if f=="index.html" else f}</loc></url>\n' for f in public) + '</urlset>\n', encoding="utf-8")

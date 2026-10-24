@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="utils.css">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Basin Powered Dispatch · No missed calls. No missed loads.">
@@ -23,7 +24,7 @@
     <a class="logo" href="index.html" aria-label="Basin Powered Dispatch home">
       <img src="logo-light.png" alt="Basin Powered Dispatch" width="168" height="40">
     </a>
-    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="menu">&#9776;</button>
     <ul id="menu">
       <li><a href="index.html" class=active>Home</a></li><li><a href="carriers.html">Carriers</a></li><li><a href="operators.html">Operators</a></li><li><a href="about.html">About</a></li>
       <li><a href="https://basinpowereddispatch.com/">Sign in</a></li>
@@ -39,8 +40,8 @@
     <div>
       <div class="eyebrow">Powering basins across the U.S.</div>
       <h1>No missed calls.<br>No missed loads.</h1>
-      <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer. The operator sees the truck coming. Nobody's calling down a list.</p>
-      <p class="lead" style="margin-top:12px;color:#fff;font-weight:600">Bridging the gap between operators and the crews that keep the basin running.</p>
+      <p class="lead s1">Orders come in. The right driver gets the offer. The operator sees the truck coming. Nobody's calling down a list.</p>
+      <p class="lead s2">Bridging the gap between operators and the crews that keep the basin running.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div class="mock-stack">
@@ -89,7 +90,7 @@
   <div class="wrap center">
     <div class="eyebrow">How it works</div>
     <h2>Four steps. No whiteboard.</h2>
-    <div class="cards four" style="text-align:left">
+    <div class="cards four s3">
       <div class="card"><div class="step-num">1</div><h3>Job order received</h3><p>Call, text, email or form. Every order lands in one place.</p></div>
       <div class="card"><div class="step-num">2</div><h3>Dispatch team gets alerted</h3><p>Use automation or manually select drivers.</p></div>
       <div class="card"><div class="step-num">3</div><h3>Trucks hit the road</h3><p>Driver taps Accept, gets the location and job details, and rolls. One tap updates each stage of the job.</p></div>
@@ -100,7 +101,7 @@
 
 <section class="alt">
   <div class="wrap">
-    <div class="cards two" style="margin-top:0">
+    <div class="cards two s4">
       <div class="aud"><div class="eyebrow">For carriers</div><h2>Fill every load.</h2><p>Know who's on, offer jobs in order, and track every truck from one screen.</p><a class="more" href="carriers.html">For carriers &rarr;</a></div>
       <div class="aud"><div class="eyebrow">For operators</div><h2>Find trucks fast. No phone calls.</h2><p>See which haulers have availability. Pick one or send to them all. Request dispatch in a couple of clicks.</p><a class="more" href="operators.html">For operators &rarr;</a></div>
     </div>
@@ -112,14 +113,14 @@
     <div class="eyebrow">Join the network. Power the basin.</div>
     <h2>Operators and carriers. One platform.</h2>
     <p class="lead">The basin runs on carriers getting the right trucks, equipment and material to operators. Operators send jobs. Carriers fill them. The more haulers and operators on Basin, the faster trucks move.</p>
-    <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="join.html?type=operator">Join as an operator</a></div>
+    <div class="btns s5"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="join.html?type=operator">Join as an operator</a></div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="s6">
   <div class="wrap">
     <div class="free">
-      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay as you grow.</h2><p>No contracts to get going. Plans scale with your fleet.</p><div class="btns" style="margin-top:20px"><a class="btn" style="background:#fff;color:var(--navy)" href="join.html">Try it free</a></div></div>
+      <div><div class="eyebrow s7">Free to start</div><h2>Use it free. Pay as you grow.</h2><p>No contracts to get going. Plans scale with your fleet.</p><div class="btns s8"><a class="btn s9" href="join.html">Try it free</a></div></div>
       <div class="tiers">
         <div class="tier"><b>Carriers</b>Free for your first 30 dispatch hauls</div>
         <div class="tier"><b>Operators</b>Free for your first 10 job orders</div>
@@ -149,6 +150,6 @@
     </nav>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="main.js" defer></script>
 </body>
 </html>
