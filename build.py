@@ -212,9 +212,9 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
   </div>
 </section>
 
-<section>
+<section class="tight">
   <div class="wrap">
-    <div class="cards">
+    <div class="cards compact">
       <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job, or returning from one.</p></div>
       <div class="card"><div class="icon">&#8635;</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next, or pick the driver yourself. No answer? It rolls to the next one.</p></div>
       <div class="card"><div class="icon"><img src="icon-b.png" alt="" style="width:30px;height:auto"></div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
@@ -225,24 +225,20 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="alt">
   <div class="wrap split">
-    <div>{REPORTS}</div>
+    <div>{BOARD}</div>
     <div>
-      <div class="eyebrow">Reports</div>
-      <h2>Know your numbers.</h2>
-      <p class="lead">See how your drivers and your operators are performing, without building a spreadsheet.</p>
-      <ul class="checks">
-        <li>Offers taken, passed or missed by driver</li>
-        <li>How fast drivers answer and trucks get assigned</li>
-        <li>Loads and barrels by day, by service</li>
-        <li>Which operators you work with most</li>
-      </ul>
+      <div class="eyebrow">Free to start</div>
+      <h2>Your first 30 dispatch hauls are free.</h2>
+      <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
+      <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap split rev">
     <div>
       <div class="avail" aria-hidden="true">
@@ -262,15 +258,19 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap split">
-    <div>{BOARD}</div>
+    <div>{REPORTS}</div>
     <div>
-      <div class="eyebrow">Free to start</div>
-      <h2>Your first 30 dispatch hauls are free.</h2>
-      <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
-      <ul class="checks"><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+      <div class="eyebrow">Reports</div>
+      <h2>Know your numbers.</h2>
+      <p class="lead">See how your drivers and your operators are performing, without building a spreadsheet.</p>
+      <ul class="checks">
+        <li>Offers taken, passed or missed by driver</li>
+        <li>How fast drivers answer and trucks get assigned</li>
+        <li>Loads and barrels by day, by service</li>
+        <li>Which operators you work with most</li>
+      </ul>
     </div>
   </div>
 </section>
