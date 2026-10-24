@@ -431,7 +431,7 @@ PAGES["about.html"] = ("About · Basin Powered Dispatch",
       <div class="eyebrow">What's missing</div>
       <h2>Plenty of software moves freight. Little of it dispatches.</h2>
       <p class="lead">Good transportation systems are out there. Few are built for the dispatch itself: taking a job order, getting trucks on the road, seeing the job through to a closed ticket and getting those trucks back out.</p>
-      <p class="lead" style="margin-top:14px">For carriers, a missed 2 AM call is a lost job. For operators, it's hours on the phone finding trucks.</p>
+      <p class="lead" style="margin-top:14px">That gap is <b style="color:var(--navy)">revenue leakage</b>. For carriers, it's the 2 AM call that goes unanswered and the job that goes to someone else. For operators, it's the man-hours spent calling around to find trucks.</p>
     </div>
     <ol class="flow">
       <li><i>1</i><b>Job order in</b><span>Call, text, email or form</span></li>
