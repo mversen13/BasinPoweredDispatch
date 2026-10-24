@@ -357,6 +357,19 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
 </section>
 
 <section class="alt">
+  <div class="wrap split rev">
+    <div>{STATUS}</div>
+    <div>
+      <div class="eyebrow">Free to start</div>
+      <h2>Your first 10 job orders are free.</h2>
+      <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
+      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through Basin Powered Dispatch</li><li>Flat pricing, not per job</li></ul>
+      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap split">
     <div>{ORDER}</div>
     <div>
@@ -374,7 +387,7 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap center">
     <div class="eyebrow">Grow the network</div>
     <h2>More haulers. More options.</h2>
@@ -383,19 +396,6 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <div class="card"><div class="icon">{ic(I["check"])}</div><h3>Keep your regulars</h3><p>Send to the carriers you already trust.</p></div>
       <div class="card"><div class="icon">{ic(I["truck"])}</div><h3>Try someone new</h3><p>When your regulars are busy, others nearby can take it.</p></div>
       <div class="card"><div class="icon">{ic(I["users"])}</div><h3>Bring your haulers</h3><p>Invite your carriers. Free for them to join. Not on yet? They still get your order by email.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap split rev">
-    <div>{STATUS}</div>
-    <div>
-      <div class="eyebrow">Free to start</div>
-      <h2>Your first 10 job orders are free.</h2>
-      <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
-      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
-      <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
 </section>
@@ -522,7 +522,7 @@ PAGES["join.html"] = ("Try It Free · Basin Powered Dispatch",
       <ul class="checks" style="color:#fff">
         <li>Carriers: free for your first 30 dispatch hauls</li>
         <li>Operators: free for your first 10 job orders</li>
-        <li>No contract. No payments run through us.</li>
+        <li>No contract. No payments run through Basin Powered Dispatch.</li>
       </ul>
     </div>
     <form class="form-card" name="join" method="POST" action="join-thanks.html" data-netlify="true" netlify-honeypot="company-url">
