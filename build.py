@@ -79,7 +79,7 @@ CTA = """
 
 BOARD = """
 <div class="board" aria-hidden="true">
-  <div class="board-top"><b>Today &middot; Dispatch board</b><span class="pill green">9 drivers on</span></div>
+  <div class="board-top"><b>Dispatch board</b><span class="pill green">9 drivers on</span></div>
   <div class="cols">
     <div class="col"><h4>Needs driver</h4>
       <div class="job"><b>Red Mesa 14H</b><span>Fresh water &middot; 2 trucks</span><span class="pill amber">Offering&hellip;</span></div>
@@ -120,9 +120,10 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow">Powering the basin</div>
+      <div class="eyebrow">Powering basins across the U.S.</div>
       <h1>No missed calls.<br>No missed loads.</h1>
-      <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer on his phone. The operator sees the truck coming. Nobody's calling down a list.</p>
+      <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer. The operator sees the truck coming. Nobody's calling down a list.</p>
+      <p class="lead" style="margin-top:12px;color:#fff;font-weight:600">One network connecting operators with the crews powering the basin.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div class="mock-stack">{BOARD}{PHONE}</div>
