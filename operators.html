@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>For Operators · Basin Powered Dispatch</title>
-<meta name="description" content="See which oilfield haulers have trucks available, pick one, or send the job to all of them.">
+<meta name="description" content="See which oilfield haulers have trucks available, pick one, or send the job to all of them. Get trucks on the road in a few clicks.">
 <meta name="theme-color" content="#0B1F38">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="For Operators · Basin Powered Dispatch">
-<meta property="og:description" content="See which oilfield haulers have trucks available, pick one, or send the job to all of them.">
+<meta property="og:description" content="See which oilfield haulers have trucks available, pick one, or send the job to all of them. Get trucks on the road in a few clicks.">
 <meta property="og:image" content="https://basinpowereddispatch.com/og-image.jpg">
 </head>
 <body>
@@ -41,38 +41,67 @@
       <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
     <div>
-<div class="board" aria-hidden="true">
-  <div class="board-top"><b>Dispatch board</b><span class="pill green">9 drivers on</span></div>
-  <div class="cols">
-    <div class="col"><h4>Needs driver</h4>
-      <div class="job"><b>Red Mesa 14H</b><span>Fresh water &middot; 2 trucks</span><span class="pill amber">Offering&hellip;</span></div>
-      <div class="job"><b>Coyote Draw 3</b><span>Vac &middot; 1 truck</span><span class="pill amber">Offering&hellip;</span></div>
-    </div>
-    <div class="col"><h4>On the way</h4>
-      <div class="job"><b>Big Spring SWD</b><span>Luis &middot; ETA 22 min</span><span class="pill blue">En route</span></div>
-      <div class="job"><b>Mustang Pad</b><span>Ray &middot; ETA 9 min</span><span class="pill blue">En route</span></div>
-    </div>
-    <div class="col"><h4>Done</h4>
-      <div class="job"><b>Caprock 7</b><span>Ana &middot; 3 loads</span><span class="pill green">Complete</span></div>
-      <div class="job"><b>Sand Hills 2</b><span>Mike &middot; 2 loads</span><span class="pill green">Complete</span></div>
-    </div>
-  </div>
-  <div class="drivers">
-    <div class="drv"><span class="dot"></span>Luis</div><div class="drv"><span class="dot"></span>Ana</div>
-    <div class="drv"><span class="dot busy"></span>Ray</div><div class="drv"><span class="dot"></span>Mike</div>
-    <div class="drv"><span class="dot off"></span>Jesse</div>
-  </div>
+<div class="avail" aria-hidden="true">
+  <div class="avail-top"><b>Trucks available</b><span class="pill blue">Closest first</span></div>
+  <div class="avail-loc">Red Mesa 31-4H Pad &middot; Midland County</div>
+  <div class="avail-row"><span><b>Caprock Fluid Services</b><small>About 5 min from their yard</small></span><span class="pill green">3 trucks free</span></div>
+  <div class="avail-row"><span><b>Mesa Vac &amp; Water</b><small>About 15 min from their yard</small></span><span class="pill green">2 trucks free</span></div>
+  <div class="avail-row"><span><b>Lone Star Vac Service</b><small>Not on the platform yet</small></span><span class="pill blue">Gets it by email</span></div>
+  <div class="avail-btns"><div class="avail-cta">Send to Caprock</div><div class="avail-cta ghost">Send to all</div></div>
 </div></div>
   </div>
 </section>
 
-<section>
+<section class="tight">
   <div class="wrap">
-    <div class="cards four">
-      <div class="card"><div class="icon">&#9673;</div><h3>See who's open</h3><p>Live availability across your haulers.</p></div>
-      <div class="card"><div class="icon">&#10148;</div><h3>Pick a company</h3><p>Or a specific driver you trust.</p></div>
-      <div class="card"><div class="icon">&#128227;</div><h3>Or send to all</h3><p>First carrier to accept gets the job.</p></div>
-      <div class="card"><div class="icon">&#128205;</div><h3>Watch it arrive</h3><p>Truck status and ETA, no calls.</p></div>
+    <div class="cards compact">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>See who's available</h3><p>Live truck availability across carriers, closest first.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div><h3>Pick a company</h3><p>Send to a hauler you already use, or try a new one.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/></svg></div><h3>Or send to all</h3><p>Busy day? Send it out. The first carrier to accept gets the job.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Track the status</h3><p>Every order, from accepted to trucks rolling to done.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>Saved locations</h3><p>Pick a pad or battery you've ordered to before. No retyping or sending pins.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Compliance on the order</h3><p>Require certs like H2S, SafeLand / PEC or TWIC, and flag when a JSA is needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split">
+    <div>
+<div class="order" aria-hidden="true">
+  <div class="avail-top"><b>New order</b><span class="pill green">Ready to send</span></div>
+  <div class="o-row"><i>1</i><div><small>Location</small><b>Red Mesa 31-4H Pad</b><em>Midland County &middot; saved</em></div></div>
+  <div class="o-row"><i>2</i><div><small>Job order</small><b>Fresh water haul &middot; 2 trucks</b></div></div>
+  <div class="o-row"><i>3</i><div><small>Driver certifications</small><span class="chip">H2S</span><span class="chip">SafeLand / PEC</span></div></div>
+  <div class="o-row"><i>4</i><div><small>When</small><b>As soon as possible</b></div></div>
+  <div class="o-row"><i>5</i><div><small>JSA needed?</small><b>Yes</b></div></div>
+  <div class="o-row"><i>6</i><div><small>Send to</small><b>Caprock Fluid Services</b><em>3 trucks free</em></div></div>
+  <div class="avail-cta">Send order &rarr;</div>
+</div></div>
+    <div>
+      <div class="eyebrow">Order in a few clicks</div>
+      <h2>Get trucks on the road in just a few clicks.</h2>
+      <p class="lead">One short order. No calls, no texts, no chasing.</p>
+      <ul class="checks">
+        <li>Pick a saved location. Drivers get the pin and directions</li>
+        <li>Choose the service and how many trucks, or enter barrels</li>
+        <li>Add required certs and JSA</li>
+        <li>As soon as possible, or schedule ahead</li>
+        <li>Send to one company, or to all of them</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <div class="eyebrow">Grow the network</div>
+    <h2>More haulers. More options.</h2>
+    <p class="lead">Your go-to hauler is booked? See who else has trucks open nearby. Every carrier that joins gives you more options when you need trucks.</p>
+    <div class="cards compact" style="margin-top:36px;text-align:left">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Keep your regulars</h3><p>Send to the carriers you already trust.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></div><h3>Try someone new</h3><p>When your regulars are busy, others nearby can take it.</p></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20c0-3-2-5.2-5-5.8"/></svg></div><h3>Bring your haulers</h3><p>Invite your carriers. Free for them to join. Not on yet? They still get your order by email.</p></div>
     </div>
   </div>
 </section>
@@ -80,21 +109,19 @@
 <section class="alt">
   <div class="wrap split rev">
     <div>
-<div class="phone" aria-hidden="true"><div class="screen">
-  <div class="hdr">New job for you</div>
-  <div class="offer">
-    <div class="tag">Offer &middot; 6:00 AM</div>
-    <h5>Red Mesa 14H</h5>
-    <dl><dt>Load</dt><dd>Fresh water</dd><dt>Trucks</dt><dd>2</dd><dt>County</dt><dd>Midland</dd></dl>
-    <div class="yn"><div class="yes">Accept</div><div class="no">Decline</div></div>
-  </div>
-  <div class="mini"><span>Pin sent to your maps</span><b>&#10003;</b></div>
-</div></div></div>
+<div class="order" aria-hidden="true">
+  <div class="avail-top"><b>Your orders</b><span class="pill blue">Live</span></div>
+  <div class="st-row"><span><b>Vacuum truck &middot; 1 truck</b><small>Red Mesa 31-4H Pad</small></span><span class="pill blue">Trucks rolling</span></div>
+  <div class="st-row"><span><b>Produced water &middot; 3 trucks</b><small>Ridgeline 7 Tank Battery</small></span><span class="pill blue">Trucks working</span></div>
+  <div class="st-row"><span><b>Fresh water &middot; 1 truck</b><small>Bluestem 22 Battery &middot; Sun 1:00 PM</small></span><span class="pill green">Accepted</span></div>
+  <div class="st-row"><span><b>Fresh water &middot; 2 trucks</b><small>Mesa 12 Pad &middot; Sun 6:30 AM</small></span><span class="pill amber">Waiting on company</span></div>
+  <div class="st-row"><span><b>Produced water &middot; 2 trucks</b><small>Ridgeline 7 Tank Battery</small></span><span class="pill gray">Done</span></div>
+</div></div>
     <div>
       <div class="eyebrow">Free to start</div>
       <h2>Your first 10 job orders are free.</h2>
       <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
-      <ul class="checks"><li>Invite your haulers. Free for them to join</li><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
+      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
       <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>

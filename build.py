@@ -68,6 +68,23 @@ FOOTER = f"""
 </html>
 """
 
+
+def ic(path):
+    return f'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{path}</svg>'
+I = {
+ "eye": '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ "building": '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>',
+ "broadcast": '<circle cx="12" cy="12" r="2"/><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"/>',
+ "activity": '<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+ "pin": '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+ "shield": '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+ "users": '<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20c0-3-2-5.2-5-5.8"/>',
+ "rotate": '<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>',
+ "truck": '<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+ "phone": '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+ "check": '<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
+}
+
 CTA = """
 <section class="cta">
   <div class="wrap">
@@ -129,6 +146,39 @@ REPORTS = """
   <div class="r-card"><h4>Drivers</h4>
     <table class="rtable"><thead><tr><th>Driver</th><th>Accepted</th><th>Rate</th><th>Answers in</th></tr></thead><tbody><tr><td><b>Wade Pruitt</b> <small>Vac 103</small></td><td>6/6</td><td><span class="rpct">100%</span></td><td>84 sec</td></tr><tr><td><b>Eli Navarro</b> <small>303</small></td><td>6/7</td><td><span class="rpct">86%</span></td><td>2 min</td></tr><tr><td><b>Ray Castillo</b> <small>Vac 102</small></td><td>6/9</td><td><span class="rpct lo">67%</span></td><td>60 sec</td></tr><tr><td><b>Brandon Kemp</b> <small>304</small></td><td>4/8</td><td><span class="rpct lo">50%</span></td><td>60 sec</td></tr></tbody></table>
   </div>
+</div>"""
+
+
+OP_AVAIL = """
+<div class="avail" aria-hidden="true">
+  <div class="avail-top"><b>Trucks available</b><span class="pill blue">Closest first</span></div>
+  <div class="avail-loc">Red Mesa 31-4H Pad &middot; Midland County</div>
+  <div class="avail-row"><span><b>Caprock Fluid Services</b><small>About 5 min from their yard</small></span><span class="pill green">3 trucks free</span></div>
+  <div class="avail-row"><span><b>Mesa Vac &amp; Water</b><small>About 15 min from their yard</small></span><span class="pill green">2 trucks free</span></div>
+  <div class="avail-row"><span><b>Lone Star Vac Service</b><small>Not on the platform yet</small></span><span class="pill blue">Gets it by email</span></div>
+  <div class="avail-btns"><div class="avail-cta">Send to Caprock</div><div class="avail-cta ghost">Send to all</div></div>
+</div>"""
+
+ORDER = """
+<div class="order" aria-hidden="true">
+  <div class="avail-top"><b>New order</b><span class="pill green">Ready to send</span></div>
+  <div class="o-row"><i>1</i><div><small>Location</small><b>Red Mesa 31-4H Pad</b><em>Midland County &middot; saved</em></div></div>
+  <div class="o-row"><i>2</i><div><small>Job order</small><b>Fresh water haul &middot; 2 trucks</b></div></div>
+  <div class="o-row"><i>3</i><div><small>Driver certifications</small><span class="chip">H2S</span><span class="chip">SafeLand / PEC</span></div></div>
+  <div class="o-row"><i>4</i><div><small>When</small><b>As soon as possible</b></div></div>
+  <div class="o-row"><i>5</i><div><small>JSA needed?</small><b>Yes</b></div></div>
+  <div class="o-row"><i>6</i><div><small>Send to</small><b>Caprock Fluid Services</b><em>3 trucks free</em></div></div>
+  <div class="avail-cta">Send order &rarr;</div>
+</div>"""
+
+STATUS = """
+<div class="order" aria-hidden="true">
+  <div class="avail-top"><b>Your orders</b><span class="pill blue">Live</span></div>
+  <div class="st-row"><span><b>Vacuum truck &middot; 1 truck</b><small>Red Mesa 31-4H Pad</small></span><span class="pill blue">Trucks rolling</span></div>
+  <div class="st-row"><span><b>Produced water &middot; 3 trucks</b><small>Ridgeline 7 Tank Battery</small></span><span class="pill blue">Trucks working</span></div>
+  <div class="st-row"><span><b>Fresh water &middot; 1 truck</b><small>Bluestem 22 Battery &middot; Sun 1:00 PM</small></span><span class="pill green">Accepted</span></div>
+  <div class="st-row"><span><b>Fresh water &middot; 2 trucks</b><small>Mesa 12 Pad &middot; Sun 6:30 AM</small></span><span class="pill amber">Waiting on company</span></div>
+  <div class="st-row"><span><b>Produced water &middot; 2 trucks</b><small>Ridgeline 7 Tank Battery</small></span><span class="pill gray">Done</span></div>
 </div>"""
 
 PAGES = {}
@@ -215,12 +265,12 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 <section class="tight">
   <div class="wrap">
     <div class="cards compact">
-      <div class="card"><div class="icon">&#9673;</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job, or returning from one.</p></div>
-      <div class="card"><div class="icon">&#8635;</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next, or pick the driver yourself. No answer? It rolls to the next one.</p></div>
+      <div class="card"><div class="icon">{ic(I["users"])}</div><h3>Who's on, at a glance</h3><p>See every driver on duty, off duty, on a job, or returning from one.</p></div>
+      <div class="card"><div class="icon">{ic(I["rotate"])}</div><h3>Auto-pick or hand-pick</h3><p>Let it send the job to whoever's up next, or pick the driver yourself. No answer? It rolls to the next one.</p></div>
       <div class="card"><div class="icon"><img src="icon-b.png" alt="" style="width:30px;height:auto"></div><h3>Right on the driver's phone</h3><p>Job, load, and map pin. He taps Accept and goes.</p></div>
-      <div class="card"><div class="icon">&#9201;</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
-      <div class="card"><div class="icon">&#9742;</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
-      <div class="card"><div class="icon">&#10003;</div><h3>Operators stay updated</h3><p>They see status themselves. Fewer callbacks.</p></div>
+      <div class="card"><div class="icon">{ic(I["truck"])}</div><h3>Track every truck</h3><p>On my way, on site, done. You see it live.</p></div>
+      <div class="card"><div class="icon">{ic(I["phone"])}</div><h3>Never miss an order</h3><p>Calls, texts and emails all land on one board.</p></div>
+      <div class="card"><div class="icon">{ic(I["check"])}</div><h3>Operators stay updated</h3><p>They see status themselves. Fewer callbacks.</p></div>
     </div>
   </div>
 </section>
@@ -277,7 +327,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 {CTA}""")
 
 PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
-"See which oilfield haulers have trucks available, pick one, or send the job to all of them.", f"""
+"See which oilfield haulers have trucks available, pick one, or send the job to all of them. Get trucks on the road in a few clicks.", f"""
 <section class="hero small">
   <div class="wrap grid">
     <div>
@@ -286,29 +336,62 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
       <p class="lead" style="margin-top:18px">See which haulers have availability right now. Pick one or send to them all. Request dispatch in a couple of clicks.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
     </div>
-    <div>{BOARD}</div>
+    <div>{OP_AVAIL}</div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="cards compact">
+      <div class="card"><div class="icon">{ic(I["eye"])}</div><h3>See who's available</h3><p>Live truck availability across carriers, closest first.</p></div>
+      <div class="card"><div class="icon">{ic(I["building"])}</div><h3>Pick a company</h3><p>Send to a hauler you already use, or try a new one.</p></div>
+      <div class="card"><div class="icon">{ic(I["broadcast"])}</div><h3>Or send to all</h3><p>Busy day? Send it out. The first carrier to accept gets the job.</p></div>
+      <div class="card"><div class="icon">{ic(I["activity"])}</div><h3>Track the status</h3><p>Every order, from accepted to trucks rolling to done.</p></div>
+      <div class="card"><div class="icon">{ic(I["pin"])}</div><h3>Saved locations</h3><p>Pick a pad or battery you've ordered to before. No retyping or sending pins.</p></div>
+      <div class="card"><div class="icon">{ic(I["shield"])}</div><h3>Compliance on the order</h3><p>Require certs like H2S, SafeLand / PEC or TWIC, and flag when a JSA is needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap split">
+    <div>{ORDER}</div>
+    <div>
+      <div class="eyebrow">Order in a few clicks</div>
+      <h2>Get trucks on the road in just a few clicks.</h2>
+      <p class="lead">One short order. No calls, no texts, no chasing.</p>
+      <ul class="checks">
+        <li>Pick a saved location. Drivers get the pin and directions</li>
+        <li>Choose the service and how many trucks, or enter barrels</li>
+        <li>Add required certs and JSA</li>
+        <li>As soon as possible, or schedule ahead</li>
+        <li>Send to one company, or to all of them</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
-    <div class="cards four">
-      <div class="card"><div class="icon">&#9673;</div><h3>See who's open</h3><p>Live availability across your haulers.</p></div>
-      <div class="card"><div class="icon">&#10148;</div><h3>Pick a company</h3><p>Or a specific driver you trust.</p></div>
-      <div class="card"><div class="icon">&#128227;</div><h3>Or send to all</h3><p>First carrier to accept gets the job.</p></div>
-      <div class="card"><div class="icon">&#128205;</div><h3>Watch it arrive</h3><p>Truck status and ETA, no calls.</p></div>
+  <div class="wrap center">
+    <div class="eyebrow">Grow the network</div>
+    <h2>More haulers. More options.</h2>
+    <p class="lead">Your go-to hauler is booked? See who else has trucks open nearby. Every carrier that joins gives you more options when you need trucks.</p>
+    <div class="cards compact" style="margin-top:36px;text-align:left">
+      <div class="card"><div class="icon">{ic(I["check"])}</div><h3>Keep your regulars</h3><p>Send to the carriers you already trust.</p></div>
+      <div class="card"><div class="icon">{ic(I["truck"])}</div><h3>Try someone new</h3><p>When your regulars are busy, others nearby can take it.</p></div>
+      <div class="card"><div class="icon">{ic(I["users"])}</div><h3>Bring your haulers</h3><p>Invite your carriers. Free for them to join. Not on yet? They still get your order by email.</p></div>
     </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap split rev">
-    <div>{PHONE}</div>
+    <div>{STATUS}</div>
     <div>
       <div class="eyebrow">Free to start</div>
       <h2>Your first 10 job orders are free.</h2>
       <p class="lead">Bring the haulers you already use. Try it on real work before you commit.</p>
-      <ul class="checks"><li>Invite your haulers. Free for them to join</li><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
+      <ul class="checks"><li>Works with your current carriers</li><li>No payments run through us</li><li>Flat pricing, not per job</li></ul>
       <div class="btns"><a class="btn btn-primary" href="join.html?type=operator">Try it free</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
     </div>
   </div>
