@@ -267,3 +267,8 @@ section.tight{padding:48px 0}
 .ab-band h2{max-width:760px}
 .ab-band p{font-size:1.2rem;color:rgba(255,255,255,.9);max-width:760px;margin-top:8px}
 .ab-band .ab-sign{font-family:var(--head);font-weight:700;font-size:1.8rem;color:#fff;margin-top:28px}
+.mv{display:grid;grid-template-columns:1fr 1.3fr;gap:20px}
+.mv-card{background:#fff;border:1px solid #E4E8EE;border-left:4px solid var(--blue);border-radius:14px;padding:28px 30px}
+.mv-card .eyebrow{color:var(--blue)}
+.mv-card p{font-size:1.12rem;line-height:1.6;color:var(--gray-900)}
+@media(max-width:900px){.mv{grid-template-columns:1fr}}

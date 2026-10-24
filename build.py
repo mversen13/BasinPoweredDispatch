@@ -58,7 +58,6 @@ FOOTER = f"""
     <nav>
       <a href="join.html">Try it free</a>
       <a href="demo.html">Try the demo</a>
-      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
       <a href="{APP}/">Sign in</a>
       <a href="{APP}/privacy/">Privacy</a>
@@ -402,49 +401,37 @@ PAGES["operators.html"] = ("For Operators · Basin Powered Dispatch",
 {CTA}""")
 
 PAGES["about.html"] = ("About · Basin Powered Dispatch",
-"Most oilfield dispatching is still manual. We built Basin Powered Dispatch with partners in the Permian Basin to close the gap between job orders and trucks on the road.", f"""
-<section class="ab-hero">
+"Most oilfield dispatching is still manual. Basin Powered Dispatch bridges the gap between operators and carriers.", f"""
+<section class="hero small">
   <div class="wrap">
-    <div class="eyebrow" style="color:var(--blue)">About Basin Powered Dispatch</div>
+    <div class="eyebrow">About</div>
     <h1>Most dispatching is still done by hand.</h1>
-    <p class="ab-lead">The oilfield has modernized almost everything. But getting a truck from a job order to a location still runs on phone calls, texts and whiteboards.</p>
+    <p class="lead" style="margin-top:18px;max-width:680px">The oilfield has modernized almost everything. Getting trucks from a job order to a location still runs on phone calls and whiteboards. We built Basin Powered Dispatch with partners in the Permian Basin to change that.</p>
   </div>
 </section>
 
-<section class="ab-prose">
+<section>
   <div class="wrap">
-    <p>The industry has made real advances. Still, connecting a dispatcher, a driver and a location is hard to automate. And it's even harder to see who's actually available to take the job.</p>
-    <p>We heard the same thing from operators and trucking companies alike. The challenge isn't the work. <b>It's getting the right trucks moving, at any hour.</b></p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="eyebrow">Where the money leaks</div>
-    <h2>Both sides lose when dispatch breaks down.</h2>
-    <div class="leak">
-      <div class="leak-card">
-        <div class="leak-tag">Carriers</div>
-        <h3>The 2 AM call.</h3>
-        <p>The business runs 24/7. Keeping dispatchers on around the clock is hard. A call missed at 2, 3 or 4 AM is a job that goes to someone else.</p>
-        <div class="leak-stat"><b>$10K&ndash;$100K+</b><span>a year in missed jobs, for some carriers</span></div>
+    <div class="mv">
+      <div class="mv-card">
+        <div class="eyebrow">Our mission</div>
+        <p>To bridge the gap between operators and carriers, so getting trucks on the road keeps pace with the 24/7 demands of the business.</p>
       </div>
-      <div class="leak-card">
-        <div class="leak-tag">Operators</div>
-        <h3>Hours on the phone.</h3>
-        <p>For operators the cost is man-hours. Calling company after company to find trucks, then calling back for updates. Time that should go to running the field.</p>
-        <div class="leak-stat"><b>Call after call</b><span>just to find out who has trucks open</span></div>
+      <div class="mv-card">
+        <div class="eyebrow">Our vision</div>
+        <p>A platform that keeps evolving and a network that keeps growing. One where companies strengthen partnerships and spend their time on what matters most: growing their business and supporting their people, customers and shareholders. Built with the industry, to change how dispatch works in oil and gas across the U.S. and North America.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap ab-split">
     <div>
       <div class="eyebrow">What's missing</div>
       <h2>Plenty of software moves freight. Little of it dispatches.</h2>
-      <p class="lead">There are good transportation management systems out there. Few are built for the dispatch itself: taking a job order, getting trucks on the road, seeing the job through to done and getting those trucks back out.</p>
+      <p class="lead">Good transportation systems are out there. Few are built for the dispatch itself: taking a job order, getting trucks on the road, seeing the job through to done and getting those trucks back out.</p>
+      <p class="lead" style="margin-top:14px">For carriers, a missed 2 AM call is a lost job. For operators, it's hours on the phone finding trucks.</p>
     </div>
     <ol class="flow">
       <li><i>1</i><b>Job order in</b><span>Call, text, email or form</span></li>
@@ -452,15 +439,6 @@ PAGES["about.html"] = ("About · Basin Powered Dispatch",
       <li><i>3</i><b>Job done</b><span>Every stage tracked</span></li>
       <li><i>4</i><b>Back on the road</b><span>Ready for the next one</span></li>
     </ol>
-  </div>
-</section>
-
-<section class="ab-band">
-  <div class="wrap">
-    <div class="eyebrow" style="color:#fff;opacity:.8">Why we built it</div>
-    <h2>Built with partners in the Permian Basin.</h2>
-    <p>So we built Basin Powered Dispatch alongside operators and carriers in the Permian Basin. One platform that connects the two, so no opportunity gets lost on either side.</p>
-    <p class="ab-sign">No missed calls. No missed loads.</p>
   </div>
 </section>
 {CTA}""")
@@ -587,7 +565,6 @@ PAGES["contact.html"] = ("Contact · Basin Powered Dispatch",
       <div class="eyebrow">Contact</div>
       <h1>Talk to us.</h1>
       <p class="lead" style="margin-top:18px">Questions, setup help or want a walkthrough? Send us a note and we'll get back to you quickly.</p>
-      <p class="lead" style="margin-top:14px">Common questions? See the <a href="faq.html" style="color:#fff;text-decoration:underline">FAQ</a>.</p>
     </div>
     <form class="form-card" name="contact" method="POST" action="contact-thanks.html" data-netlify="true" netlify-honeypot="company-url">
       <input type="hidden" name="form-name" value="contact">
@@ -643,6 +620,7 @@ PAGES["demo-ready.html"] = ("You're in · Basin Powered Dispatch",
 </section>
 <script>setTimeout(function(){{location.href="{APP}/demo/"}},2500)</script>""")
 
+PAGES.pop("faq.html", None)  # FAQ hidden for now
 out = Path(__file__).parent
 for fname, (title, desc, body) in PAGES.items():
     active = fname
