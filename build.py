@@ -124,10 +124,10 @@ REPORTS = """
   </div>
   <div class="r-grid">
     <div class="r-card"><h4>Barrels by day</h4><div class="rbars"><div class="rbar"><i style="height:98%"></i><span>10/19</span></div><div class="rbar"><i style="height:58%"></i><span>10/20</span></div><div class="rbar"><i style="height:65%"></i><span>10/21</span></div><div class="rbar"><i style="height:46%"></i><span>10/22</span></div><div class="rbar"><i style="height:58%"></i><span>10/23</span></div><div class="rbar"><i style="height:6%"></i><span>10/24</span></div></div></div>
-    <div class="r-card"><h4>Top operators</h4><div class="rop"><span>Red Mesa Energy</span><b>15 jobs</b><i style="width:100%"></i></div><div class="rop"><span>Permian Basin Resources</span><b>5 jobs</b><i style="width:33%"></i></div><div class="rop"><span>Sandhill Resources</span><b>4 jobs</b><i style="width:27%"></i></div><div class="rop"><span>Desert Fox Oil</span><b>2 jobs</b><i style="width:13%"></i></div></div></div>
+    <div class="r-card"><h4>Top operators</h4><div class="rop"><span>Red Mesa Energy</span><b>15 jobs</b><i style="width:100%"></i></div><div class="rop"><span>Permian Basin Resources</span><b>5 jobs</b><i style="width:33%"></i></div><div class="rop"><span>Sandhill Resources</span><b>4 jobs</b><i style="width:27%"></i></div><div class="rop"><span>Desert Fox Oil</span><b>2 jobs</b><i style="width:13%"></i></div></div>
   </div>
   <div class="r-card"><h4>Drivers</h4>
-    <table class="rtable"><thead><tr><th>Driver</th><th>Took</th><th>Rate</th><th>Answers in</th></tr></thead><tbody><tr><td><b>Wade Pruitt</b> <small>Vac 103</small></td><td>6/6</td><td><span class="rpct">100%</span></td><td>84 sec</td></tr><tr><td><b>Eli Navarro</b> <small>303</small></td><td>6/7</td><td><span class="rpct">86%</span></td><td>2 min</td></tr><tr><td><b>Ray Castillo</b> <small>Vac 102</small></td><td>6/9</td><td><span class="rpct lo">67%</span></td><td>60 sec</td></tr><tr><td><b>Brandon Kemp</b> <small>304</small></td><td>4/8</td><td><span class="rpct lo">50%</span></td><td>60 sec</td></tr></tbody></table>
+    <table class="rtable"><thead><tr><th>Driver</th><th>Accepted</th><th>Rate</th><th>Answers in</th></tr></thead><tbody><tr><td><b>Wade Pruitt</b> <small>Vac 103</small></td><td>6/6</td><td><span class="rpct">100%</span></td><td>84 sec</td></tr><tr><td><b>Eli Navarro</b> <small>303</small></td><td>6/7</td><td><span class="rpct">86%</span></td><td>2 min</td></tr><tr><td><b>Ray Castillo</b> <small>Vac 102</small></td><td>6/9</td><td><span class="rpct lo">67%</span></td><td>60 sec</td></tr><tr><td><b>Brandon Kemp</b> <small>304</small></td><td>4/8</td><td><span class="rpct lo">50%</span></td><td>60 sec</td></tr></tbody></table>
   </div>
 </div>"""
 
@@ -227,18 +227,18 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
 
 <section style="padding-top:0">
   <div class="wrap split">
+    <div>{REPORTS}</div>
     <div>
       <div class="eyebrow">Reports</div>
       <h2>Know your numbers.</h2>
       <p class="lead">See how your drivers and your operators are performing, without building a spreadsheet.</p>
       <ul class="checks">
-        <li>Offers taken, passed, or missed, by driver</li>
+        <li>Offers taken, passed or missed by driver</li>
         <li>How fast drivers answer and trucks get assigned</li>
         <li>Loads and barrels by day, by service</li>
         <li>Which operators you work with most</li>
       </ul>
     </div>
-    <div>{REPORTS}</div>
   </div>
 </section>
 
