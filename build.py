@@ -52,7 +52,7 @@ FOOTER = f"""
 </main>
 <footer>
   <div class="wrap">
-    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch &middot; Built in the Permian</div>
+    <div>&copy; <span id="yr">2026</span> Basin Powered Dispatch</div>
     <nav>
       <a href="demo.html">Try the demo</a>
       <a href="{APP}/">Sign in</a>
