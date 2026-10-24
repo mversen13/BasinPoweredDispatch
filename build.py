@@ -120,7 +120,7 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow">Dispatch for oilfield haulers</div>
+      <div class="eyebrow">Powering the basin</div>
       <h1>No missed calls.<br>No missed loads.</h1>
       <p class="lead" style="margin-top:18px">Orders come in. The right driver gets the offer on his phone. The operator sees the truck coming. Nobody's calling down a list.</p>
       <div class="btns"><a class="btn btn-primary" href="join.html">Try it free</a><a class="btn btn-ghost" href="demo.html">Try the demo</a></div>
@@ -159,9 +159,9 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
 
 <section>
   <div class="wrap center">
-    <div class="eyebrow">Join the network</div>
+    <div class="eyebrow">Join the network. Power the basin.</div>
     <h2>Operators and carriers. One platform.</h2>
-    <p class="lead">Operators send jobs. Carriers fill them. The more haulers and operators on Basin, the faster trucks move.</p>
+    <p class="lead">The basin runs on carriers getting the right trucks, equipment and material to operators. Operators send jobs. Carriers fill them. The more haulers and operators on Basin, the faster trucks move.</p>
     <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="join.html?type=operator">Join as an operator</a></div>
   </div>
 </section>
@@ -169,9 +169,9 @@ PAGES["index.html"] = ("Basin Powered Dispatch · No missed calls. No missed loa
 <section style="padding-top:0">
   <div class="wrap">
     <div class="free">
-      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay when you grow.</h2><p>No contracts to get going. Plans scale with your fleet.</p><div class="btns" style="margin-top:20px"><a class="btn" style="background:#fff;color:var(--navy)" href="join.html">Try it free</a></div></div>
+      <div><div class="eyebrow" style="color:#fff;opacity:.8">Free to start</div><h2>Use it free. Pay as you grow.</h2><p>No contracts to get going. Plans scale with your fleet.</p><div class="btns" style="margin-top:20px"><a class="btn" style="background:#fff;color:var(--navy)" href="join.html">Try it free</a></div></div>
       <div class="tiers">
-        <div class="tier"><b>Carriers</b>Free for 30 dispatch jobs a month</div>
+        <div class="tier"><b>Carriers</b>Free for your first 30 dispatch jobs</div>
         <div class="tier"><b>Operators</b>Free for your first 10 job orders</div>
       </div>
     </div>
@@ -211,7 +211,7 @@ PAGES["carriers.html"] = ("For Carriers · Basin Powered Dispatch",
     <div>{BOARD}</div>
     <div>
       <div class="eyebrow">Free to start</div>
-      <h2>30 dispatch jobs a month, free.</h2>
+      <h2>Your first 30 dispatch jobs are free.</h2>
       <p class="lead">Run real jobs before you pay a dime. Plans scale with your fleet when you're ready.</p>
       <ul class="checks"><li>Get found by operators looking for trucks</li><li>No contract to start</li><li>We set it up with you</li><li>Your drivers, your rotation</li></ul>
       <div class="btns"><a class="btn btn-primary" href="join.html?type=carrier">Join as a carrier</a><a class="btn btn-dark" href="demo.html">Try the demo</a></div>
@@ -291,8 +291,8 @@ PAGES["about.html"] = ("About · Basin Powered Dispatch",
     <div class="photo">Team / truck photo<br><small>(placeholder)</small></div>
     <div>
       <div class="eyebrow">Who we are</div>
-      <h2>Built with haulers in the Permian.</h2>
-      <p class="lead">We built Basin Powered Dispatch alongside working vac and water-hauling crews out of Midland, TX. Simple enough for any driver. Fast enough for 4 AM.</p>
+      <h2>The basin runs on haulers.</h2>
+      <p class="lead">Carriers keep the basin powered, getting the right trucks, equipment and material to operators. Basin Powered Dispatch connects them in one place, so it's easy to see who's available and get the job moving.</p>
     </div>
   </div>
 </section>
@@ -301,7 +301,7 @@ PAGES["about.html"] = ("About · Basin Powered Dispatch",
 FAQS = [
     ("What is Basin Powered Dispatch?", "A dispatch board for oilfield haulers. Orders come in, drivers get offers on their phone, and operators see truck status live."),
     ("Who is it for?", "Trucking companies running about 10 to 75 trucks (vac, water and fluid haulers) and the operators who hire them."),
-    ("What does it cost?", "Free to start. Carriers get 30 dispatch jobs a month free. Operators get their first 10 job orders free. Paid plans scale with fleet size. Ask us on a demo."),
+    ("What does it cost?", "Free to start. Carriers get their first 30 dispatch jobs free. Operators get their first 10 job orders free. Paid plans scale with fleet size. Ask us on a demo."),
     ("Does it handle billing or payments?", "No. We stick to dispatch. No money runs through the platform, and your billing stays how it is today."),
     ("Can operators and carriers both use it?", "Yes. Carriers dispatch their own drivers. Operators can see who's available, pick a carrier, or send a job to all of them."),
     ("Where do you work?", "We're starting in the Permian Basin and expanding from there."),
@@ -378,7 +378,7 @@ PAGES["join.html"] = ("Try It Free · Basin Powered Dispatch",
       <h1>Why wait? Try it free.</h1>
       <p class="lead" style="margin-top:18px">Carriers and operators join free. We'll reach out and get you set up.</p>
       <ul class="checks" style="color:#fff">
-        <li>Carriers: free for 30 dispatch jobs a month</li>
+        <li>Carriers: free for your first 30 dispatch jobs</li>
         <li>Operators: free for your first 10 job orders</li>
         <li>No contract. No payments run through us.</li>
       </ul>
